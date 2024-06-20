@@ -1,0 +1,9 @@
+
+*.aux
+*.bcf
+*.idx
+*.log
+*.mw
+*.xml
+*.gz
+*.toc
