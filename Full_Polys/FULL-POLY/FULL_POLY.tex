@@ -1,5 +1,5 @@
 % Load the kaobook class
-\documentclass[draft,
+\documentclass[
 	fontsize=10pt, % Base font size
 	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
 	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
@@ -46,9 +46,9 @@
 %%	BOOK INFORMATION
 %%----------------------------------------------------------------------------------------
 
-\titlehead{Document Template}
+%\titlehead{Document Template}
 \title[SII en PSI*]{SII en PSI*}
-\author[XP]{Xavier Pessoles}
+\author[XP]{Xavier Pessoles et plein d'autres ...}
 \date{\today}
 %\publishers{An Awesome Publisher}
 
@@ -75,10 +75,10 @@
 %	To view a copy of the CC0 code, visit: \\\url{http://creativecommons.org/publicdomain/zero/1.0/}
 %	
 %	\medskip
-%	
-%	\textbf{Colophon} \\
+%%	
+%%	\textbf{Colophon} \\
 %	This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
-%	
+%%	
 %	\medskip
 %	
 %	\textbf{Publisher} \\
@@ -90,24 +90,21 @@
 %%	DEDICATION
 %%----------------------------------------------------------------------------------------
 %
-%\dedication{
-%	The harmony of the world is made manifest in Form and Number, and the heart and soul and all the poetry of Natural Philosophy are embodied in the concept of mathematical beauty.\\
-%	\flushright -- D'Arcy Wentworth Thompson
-%}
+\dedication{Merci à ma petite famille, qui partage ma vie. }
 %
 %%----------------------------------------------------------------------------------------
 %%	OUTPUT TITLE PAGE AND PREVIOUS
 %%----------------------------------------------------------------------------------------
 %
 %% Note that \maketitle outputs the pages before here
-%\maketitle
+\maketitle
 %
 %%----------------------------------------------------------------------------------------
 %%	PREFACE
 %%----------------------------------------------------------------------------------------
 %
-%\chapter*{Preface}
-%
+\chapter*{Preface}
+\input{00_preface}
 %\blindtext
 %
 %%----------------------------------------------------------------------------------------
