@@ -55,13 +55,14 @@
 %----------------------------------------------------------------------------------------
 %
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
+\maketitle
 %
 %%----------------------------------------------------------------------------------------
 %%	COPYRIGHT PAGE
 %%----------------------------------------------------------------------------------------
 %
-%\makeatletter
-%\uppertitleback{\@titlehead} % Header
+\makeatletter
+\uppertitleback{\@titlehead} % Header
 %
 %\lowertitleback{
 %	\textbf{Disclaimer} \\
@@ -74,30 +75,40 @@
 %	
 %	To view a copy of the CC0 code, visit: \\\url{http://creativecommons.org/publicdomain/zero/1.0/}
 %	
-%	\medskip
+	\medskip
 %%	
-%%	\textbf{Colophon} \\
-%	This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
+	\textbf{Colophon} \\
+	This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
 %%	
 %	\medskip
 %	
 %	\textbf{Publisher} \\
 %	First printed in May 2019 by \@publishers
 %}
-%\makeatother
+\makeatother
 %
+\newpage
 %%----------------------------------------------------------------------------------------
 %%	DEDICATION
 %%----------------------------------------------------------------------------------------
 %
-\dedication{Merci à ma petite famille, qui partage ma vie. }
-%
-%%----------------------------------------------------------------------------------------
+\vspace*{\stretch{1}}
+
+\begin{center}
+%\dedication{Merci à ma petite famille, qui partage ma vie. }
+\large
+Merci à ma petite famille, qui partage ma vie. 
+\normalsize
+\end{center}
+\vspace*{\stretch{1}}
+
+
+	%%----------------------------------------------------------------------------------------
 %%	OUTPUT TITLE PAGE AND PREVIOUS
 %%----------------------------------------------------------------------------------------
 %
 %% Note that \maketitle outputs the pages before here
-\maketitle
+
 %
 %%----------------------------------------------------------------------------------------
 %%	PREFACE
@@ -190,7 +201,7 @@
 \input{12_revisions_statique_02}
 \input{12_revisions_statique_03}
 \input{14_revisions_cinematique}
-%
+%%
 %\blindtext
 %
 %\appendix % From here onwards, chapters are numbered with letters, as is the appendix convention
