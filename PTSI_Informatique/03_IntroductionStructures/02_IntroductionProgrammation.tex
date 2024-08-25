@@ -6,7 +6,7 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-\newcommand{\discipline}{Informatique -- PTSI}
+\newcommand{\discipline}{Informatique -- PTSI -- MPSI}
 \newcommand{\auteur}{Xavier Pessoles}
 \newcommand{\repRel}{../../..}
 
@@ -94,8 +94,7 @@
 %%%%%
 \newcommand{\repExo}{}
 \newcommand{\nomExo}{}
-%\newcounter{cptApplication}[chapter]
-%\newcounter{cptTD}[chapter]
+
 \AtBeginEnvironment{corrige}{\small}
 
 \livrettrue % Livrettrue :  eleve sans les corrections
@@ -104,33 +103,7 @@
 %%%%%
 
 
-\setcounter{chapter}{0}
-
-\newcommand{\repCours}{\repRel/Informatique/Cours/00_PriseEnMain/Cours}
-% ======= COURS ======= 
-\graphicspath{{\repStyle/png}{\repCours/images/}}
-\setchapterimage{Fond_ALG.png}
-\setchapterpreamble[u]{\margintoc}
-\chapter{Présentation}
-\input{\repCours/00_PriseEnMain.tex}
-% ===================== 
-%
-%\setcounter{cptApplication}{1}
-%\setcounter{cptTD}{1}
-%
-%% ========= Application ========= 
-%\renewcommand{\repExo}{\repRel/Informatique/Cours/01_Bases/}
-%\renewcommand{\nomExo}{Application_01}
-%\graphicspath{{\repStyle/png}{\repExo\nomExo/images}}
-%
-%\proffalse
-%\input{\repExo\nomExo/\nomExo}
-%\iflivret \else \proftrue
-%\input{\repExo\nomExo/\nomExo}
-%\fi
-%% ==========================
-%
-%
+\input{01_intro}
 
 
 \end{document}
