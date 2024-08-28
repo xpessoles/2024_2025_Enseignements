@@ -1,75 +1,112 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Exercices de SII},
-    pdfauthor={Xavier Pessoles}]{hyperref}
+% Load the kaobook class
+\documentclass[
+	fontsize=10pt, % Base font size
+	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
+	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+%%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
+]{kaobook}
 
-
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
+\newcommand{\auteur}{Xavier Pessoles}
 \newcommand{\repRel}{../../../..}
+\newcommand{\repAct}{\repRel/PSI_ExercicesCompetences/}
+
+\input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
-\input{\repRel/Style/packages}
-\input{\repRel/Style/new_style}
-\input{\repRel/Style/macros_SII}
-\input{\repRel/Style/environment}
-\usepackage{\repRel/Style/UPSTI_pedagogique}
+\input{\repRel/Style/macros_SII_v2}
+\input{\repRel/Style/environment_v2}
+\usepackage{\repStyle/UPSTI_pedagogique}
 
-\newcommand{\macrocomp}{macro_competences}
-\newcommand{\comp}{competences}
-\newcommand{\td}{fichier_td}
-\newcommand{\repExos}{\repRel/ExercicesCompetences}
-\newcommand{\repExo}{dossier}
+
+% Choose the language
+\frenchsetup{StandardItemLabels=true}
 
 
 
+% Load the bibliography package
+\usepackage{kaobiblio}
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
+% Load mathematical packages for theorems and related environments
+\usepackage{kaotheorems}
 
-\def\xxYCartouche{-2.25cm}
-\def\xxYongletGarde{.5cm}
-\def\xxYOnget{.9cm}
+% Load the package for hyperreferences
+\usepackage{kaorefs}
+
+\graphicspath{{images/}{./}} % Paths where images are looked for
+
+\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+
 
 
 \begin{document}
 
-\def\xxcompetences{}
-\def\xxfigures{}
+%%----------------------------------------------------------------------------------------
+%%	BOOK INFORMATION
+%%----------------------------------------------------------------------------------------
+%
+%%\titlehead{Document Template}
+%\title[SII en PSI*]{SII en PSI* -- Exercices d'application}
+%\author[XP]{Xavier Pessoles}
+%\date{\today}
+%%\publishers{An Awesome Publisher}
+%
+%%----------------------------------------------------------------------------------------
+%%
+%\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+%\maketitle
+%
+%\begingroup % Local scope for the following commands
+%\tableofcontents
+%\endgroup
 
-\graphicspath{{\repStyle/png/}}
+%%----------------------------------------------------------------------------------------
+%%	MAIN BODY
+%%----------------------------------------------------------------------------------------
+%
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+
+\setchapterstyle{kao}
+
+\setcounter{margintocdepth}{\sectiontocdepth}
+\marginlayout
+\graphicspath{{\repStyle/png}}
+
+\pagestyle{xp.scrheadings}
 
 
+%%%%%
+\newcommand{\repExo}{Application_01_ROV}
+\newcommand{\nomExo}{Application_01_ROV}
+%\newcounter{cptApplication}[chapter]
+%\newcounter{cptTD}[chapter]
+\AtBeginEnvironment{corrige}{\small}
 
-\setlength{\columnseprule}{.1pt}
+\livrettrue % Livrettrue :  eleve sans les corrections
+\collefalse
+\normaltrue
+%%%%%
+\setcounter{cptApplication}{1}
+\setcounter{cptTD}{1}
+\newcommand{\exer}{\subsection*}
+\newcommand{\td}{}
 
-%% MODELISER
-% Page de garde
-%\chapter{Modéliser}
-\input{\repRel/Style/Entete_DDS}
 
-%\vspace{2cm}
+\newcounter{decsec}
+\setcounter{decsec}{221} % 
 
+% Macro pour les sections décroissantes
+\renewcommand{\exer}[1]{
+    \stepcounter{decsec}
+    \addtocounter{decsec}{-2} % Décrémente le compteur de 1
+    \section*{Exercice \arabic{decsec} -- #1}
+    \addtocounter{subparagraph}{-1} % Empêche l'incrémentation du compteur de section normal
+}
 
-\def\xxpartie{}
-\def\xxnumpartie{}
-\def\xxchapitre{}
-\def\xxnumchapitre{}
-\def\xxactivite{DDS 1}
-\def\xxtitreexo{Les ptits devoirs du soir}
-\def\xxsourceexo{Du 4 septembre au 22 novembre}
+\chapter*{Les Petits Devoirs du Soir -- DDS}
 
-\input{\repRel/Style/pagegarde_TD}
-
-\pagestyle{fancy}
-\thispagestyle{plain}
-
-\vspace{4.5cm}
-\begin{multicols}{2}
-\input{DDS_01_liste}
-\input{DDS_02_liste}
-\input{DDS_03_liste}
-\end{multicols}
-
-\newpage
-\proftrue
-\input{DDS_01_liste}
-\input{DDS_02_liste}
-\input{DDS_03_liste}
+\input{all_tex}
+%\proftrue
+%\setcounter{chapter}{0}
+%\input{all_tex}
 \end{document}
-
