@@ -3,7 +3,7 @@
 \newcommand{\repCours}{\repRel/Informatique/Cours/01_Bases/Cours}
 % ======= COURS ======= 
 \graphicspath{{\repStyle/png}{\repCours/images/}}
-\input{\repCours/01_Bases.tex}
+\input{\repCours/02_Bases_Structures.tex}
 % ===================== 
 
 \setcounter{cptApplication}{1}
@@ -11,12 +11,12 @@
 
 % ========= Application ========= 
 \renewcommand{\repExo}{\repRel/Informatique/Cours/01_Bases/}
-\renewcommand{\nomExo}{Application_01}
-\graphicspath{{\repStyle/png}{\repExo\nomExo/images}}
+\renewcommand{\nomExo}{Application_02}
+\graphicspath{{\repStyle/png}{\repExo/Application_01/images}}
 
 \proffalse
-\input{\repExo\nomExo/\nomExo}
+\input{\repExo/Application_01/\nomExo}
 \iflivret \else \proftrue
-\input{\repExo\nomExo/\nomExo}
+\input{\repExo/Application_01/\nomExo}
 \fi
 % ==========================
