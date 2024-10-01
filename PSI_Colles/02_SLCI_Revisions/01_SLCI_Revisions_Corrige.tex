@@ -1,0 +1,232 @@
+
+% Load the kaobook class
+\documentclass[
+	fontsize=10pt, % Base font size
+	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
+	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+%%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
+]{kaobook}
+
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI -}
+\newcommand{\auteur}{Xavier Pessoles}
+\newcommand{\repRel}{../../..}
+
+\input{\repRel/Style/packages_v2}
+\newcommand{\repStyle}{\repRel/Style}
+\input{\repRel/Style/macros_SII_v2}
+\input{\repRel/Style/environment_v2}
+\usepackage{\repStyle/UPSTI_pedagogique}
+
+
+% Choose the language
+\frenchsetup{StandardItemLabels=true}
+
+
+
+% Load the bibliography package
+\usepackage{kaobiblio}
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+
+% Load mathematical packages for theorems and related environments
+\usepackage{kaotheorems}
+
+% Load the package for hyperreferences
+\usepackage{kaorefs}
+
+\graphicspath{{images/}{./}} % Paths where images are looked for
+
+\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+
+
+\begin{document}
+
+%%----------------------------------------------------------------------------------------
+%%	BOOK INFORMATION
+%%----------------------------------------------------------------------------------------
+
+\titlehead{Document Template}
+\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
+\author[XP]{Xavier Pessoles}
+\date{\today}
+%\publishers{An Awesome Publisher}
+
+%----------------------------------------------------------------------------------------
+%
+\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+
+
+%%----------------------------------------------------------------------------------------
+%%	MAIN BODY
+%%----------------------------------------------------------------------------------------
+%
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+
+\setchapterstyle{kao}
+
+\setcounter{margintocdepth}{\sectiontocdepth}
+\marginlayout
+\graphicspath{{\repStyle/png}}
+
+\pagestyle{xp.scrheadings}
+
+
+
+%%%%%
+\newcommand{\repExo}{}
+\newcommand{\nomExo}{}
+\AtBeginEnvironment{corrige}{\small}
+
+\livrettrue % Livrettrue :  eleve sans les corrections
+\collefalse\colletrue
+\normaltrue
+\proftrue
+%%%%%
+
+\newcommand{\exer}{\subsection*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_Cy_01_ModelisationSystemes/Ch_02_RevisionsSLCI/}
+\renewcommand{\nomExo}{Cy_01_Ch_02_03_TD_03_Exosquelette}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1021_Euler}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_Cy_01_ModelisationSystemes/Ch_01_Generalites/}
+\renewcommand{\nomExo}{Application_01_ROV}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1022_Euler}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_Cy_01_ModelisationSystemes/Ch_02_RevisionsSLCI/}
+\renewcommand{\nomExo}{Cy_01_Ch_02_Sy_TD_01_SupportRov}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+\renewcommand{\repExo}{\repRel/PSI_Cy_01_ModelisationSystemes/Ch_01_Generalites/}
+\renewcommand{\nomExo}{Application_02_SeineMusicale}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1023_Euler}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-03-SchemaBlocs/}
+\renewcommand{\nomExo}{39_SeineMusicale}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\end{document}
+
+\newcommand{\exer}{\subsection*}
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1021_Euler}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%s
+
+
+
+
+\end{document}
+
+\chapter*{Colle \arabic{cptTD} \\ 
+\titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+\addcontentsline{toc}{section}{TD \arabic{cptTD} : \titrechapitre -- \ifprof Corrigé \else Sujet \fi}
+
+\iflivret \stepcounter{cptTD} \else
+\ifprof  \stepcounter{cptTD} \else \fi \fi
+
+\renewcommand{\leftmark}{\titrechapitre}
+\renewcommand{\rightmark}{\titrechapitre}
+
+
+\setcounter{question}{0}
+
+\newcommand{\exer}{\subsection*}
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1021_Euler}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\exer}{\subsection*}
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/NUM/NUM-03}
+\renewcommand{\nomExo}{1021_Euler}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+
+\renewcommand{\nomExo}{75_TrainA380}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+
+\renewcommand{\nomExo}{76_FixationSki}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+
+\renewcommand{\nomExo}{85_FauteuilBateau}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage 
+\clearpage
+
+\renewcommand{\nomExo}{86_Moyeu}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\newpage
+\clearpage
+
+\renewcommand{\nomExo}{87_Nacelle}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\end{document}
+
