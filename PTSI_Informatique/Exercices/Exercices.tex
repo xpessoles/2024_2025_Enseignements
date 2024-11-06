@@ -1,0 +1,250 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Exercices en Python : Utilisation de la boucle \texttt{for}}
+\author{Pour Débutants}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+Ces exercices sont conçus pour aider les débutants à pratiquer l'utilisation de la boucle \texttt{for} en Python. Chacun des exercices couvre une application de base, allant de l'itération simple à des applications un peu plus poussées de la boucle \texttt{for}.
+
+\section*{Exercices boucle For}
+\subsection{Niveau 1}
+
+\begin{enumerate}
+
+    \item \textbf{Exercice 1} \\
+    Écrivez un programme qui affiche les nombres de 1 à 10 en utilisant une boucle \texttt{for}.
+
+    \item \textbf{Exercice 2} \\
+    Écrivez un programme qui affiche tous les nombres pairs de 1 à 20.
+
+    \item \textbf{Exercice 3} \\
+    Créez un programme qui affiche les carrés des nombres de 1 à 10.
+
+    \item \textbf{Exercice 4} \\
+    Écrivez un programme qui affiche les éléments d'une liste de fruits \texttt{['pomme', 'banane', 'orange', 'raisin']}.
+
+    \item \textbf{Exercice 5} \\
+    Écrivez un programme qui calcule et affiche la somme des nombres de 1 à 100.
+
+    \item \textbf{Exercice 6} \\
+    Créez un programme qui affiche les lettres de l'alphabet en utilisant une boucle \texttt{for}.
+
+    \item \textbf{Exercice 7} \\
+    Écrivez un programme qui prend une liste de nombres et affiche chaque nombre multiplié par 2.
+
+    \item \textbf{Exercice 8} \\
+    Écrivez un programme qui affiche tous les éléments d'une liste de noms en commençant par la première lettre de chaque nom en majuscule.
+
+    \item \textbf{Exercice 9} \\
+    Créez un programme qui affiche les 10 premiers multiples de 3.
+
+    \item \textbf{Exercice 10} \\
+    Écrivez un programme qui affiche les nombres de 10 à 1 dans l'ordre décroissant.
+
+    \item \textbf{Exercice 11} \\
+    Écrivez un programme qui affiche la table de multiplication de 7 (de 1 à 10).
+
+    \item \textbf{Exercice 12} \\
+    Créez un programme qui demande à l'utilisateur un nombre entier, puis affiche les \texttt{n} premiers nombres impairs, où \texttt{n} est l'entier donné.
+
+    \item \textbf{Exercice 13} \\
+    Écrivez un programme qui prend une phrase et affiche chaque mot de cette phrase séparément.
+
+    \item \textbf{Exercice 14} \\
+    Créez un programme qui demande à l'utilisateur une chaîne de caractères et qui affiche chaque caractère de la chaîne individuellement.
+
+    \item \textbf{Exercice 15} \\
+    Écrivez un programme qui utilise une boucle \texttt{for} pour compter le nombre de voyelles dans une phrase donnée.
+
+    \item \textbf{Exercice 16} \\
+    Créez un programme qui utilise une boucle \texttt{for} pour calculer la factorielle d'un nombre donné par l'utilisateur.
+
+    \item \textbf{Exercice 17} \\
+    Écrivez un programme qui prend une liste de notes (entiers) et calcule la moyenne de ces notes.
+
+    \item \textbf{Exercice 18} \\
+    Créez un programme qui demande à l'utilisateur un nombre et affiche les diviseurs de ce nombre.
+
+    \item \textbf{Exercice 19} \\
+    Écrivez un programme qui affiche les nombres de 1 à 50, mais pour les multiples de 3 affiche "Fizz", pour les multiples de 5 affiche "Buzz", et pour les multiples de 3 et 5 affiche "FizzBuzz".
+
+    \item \textbf{Exercice 20} \\
+    Créez un programme qui affiche les nombres de la suite de Fibonacci jusqu'au 10\textsuperscript{e} terme.
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Niveau 2}
+
+\begin{enumerate}
+
+    \item \textbf{Exercice 21} \\
+    Écrivez un programme qui prend une liste de mots et affiche le mot le plus long de cette liste. Utilisez une boucle \texttt{for} pour parcourir la liste.
+
+    \item \textbf{Exercice 22} \\
+    Écrivez un programme qui affiche les nombres premiers de 1 à 100. Utilisez une boucle \texttt{for} imbriquée pour vérifier si chaque nombre est divisible uniquement par 1 et par lui-même.
+
+    \item \textbf{Exercice 23} \\
+    Créez un programme qui prend un mot et vérifie s’il est un palindrome (mot qui se lit de la même manière à l’envers). Utilisez une boucle \texttt{for} pour comparer les caractères.
+
+    \item \textbf{Exercice 24} \\
+    Écrivez un programme qui calcule le produit scalaire de deux listes d'entiers de même longueur. Par exemple, si \texttt{A = [1, 2, 3]} et \texttt{B = [4, 5, 6]}, le produit scalaire est \texttt{1*4 + 2*5 + 3*6 = 32}.
+
+    \item \textbf{Exercice 25} \\
+    Créez un programme qui génère une pyramide de nombres. Par exemple, si l'utilisateur entre \texttt{4}, le programme doit afficher : \\
+    \begin{verbatim}
+    1
+    22
+    333
+    4444
+    \end{verbatim}
+
+    \item \textbf{Exercice 26} \\
+    Écrivez un programme qui utilise une boucle \texttt{for} pour trier une liste d’entiers en utilisant l'algorithme de tri par sélection. Ne pas utiliser de fonctions de tri intégrées.
+
+    \item \textbf{Exercice 27} \\
+    Créez un programme qui prend une liste de phrases et affiche les mots de chaque phrase qui contiennent exactement 5 lettres. Utilisez une boucle \texttt{for} pour parcourir chaque mot.
+
+    \item \textbf{Exercice 28} \\
+    Écrivez un programme qui utilise une boucle \texttt{for} pour compter le nombre de fois où chaque lettre apparaît dans une phrase donnée. Affichez le résultat sous forme de dictionnaire où chaque lettre est une clé.
+
+    \item \textbf{Exercice 29} \\
+    Créez un programme qui prend une liste de listes (par exemple \texttt{[[1, 2], [3, 4], [5, 6]]}) et calcule la somme de tous les éléments. Utilisez des boucles \texttt{for} imbriquées pour parcourir la liste principale et les sous-listes.
+
+    \item \textbf{Exercice 30} \\
+    Écrivez un programme qui génère les \texttt{n} premiers termes de la séquence de Fibonacci et les stocke dans une liste. Utilisez une boucle \texttt{for} pour générer les termes et afficher la liste finale.
+
+\end{enumerate}
+
+
+
+\subsection{Niveau 3}
+
+\begin{enumerate}
+
+    \item \textbf{Exercice 31} \\
+    Créez un programme qui prend une liste de mots et détermine, pour chaque mot, si celui-ci est un palindrome. Le programme doit afficher les mots qui sont des palindromes.
+
+    \item \textbf{Exercice 32} \\
+    Écrivez un programme qui calcule la somme de tous les nombres premiers inférieurs à un nombre donné par l'utilisateur. Utilisez des boucles \texttt{for} imbriquées pour vérifier si chaque nombre est premier.
+
+    \item \textbf{Exercice 33} \\
+    Créez un programme qui prend deux chaînes de caractères et trouve les lettres communes entre les deux chaînes, sans répétition. Utilisez une boucle \texttt{for} pour comparer les lettres et construisez le résultat dans une liste ou une chaîne.
+
+    \item \textbf{Exercice 34} \\
+    Écrivez un programme qui génère la suite de Collatz pour un nombre donné. La suite de Collatz est définie par : si le nombre est pair, le diviser par 2 ; s'il est impair, le multiplier par 3 et ajouter 1. La suite continue jusqu'à ce que le nombre atteigne 1.
+
+    \item \textbf{Exercice 35} \\
+    Créez un programme qui prend une liste de listes représentant une matrice carrée et calcule la somme des éléments au-dessus de la diagonale principale.
+
+    \item \textbf{Exercice 36} \\
+    Écrivez un programme qui génère les premiers \texttt{n} nombres de la suite de Lucas, une variante de la suite de Fibonacci avec les termes initiaux \texttt{2} et \texttt{1}.
+
+    \item \textbf{Exercice 37} \\
+    Créez un programme qui prend une phrase et affiche chaque mot avec ses lettres en ordre alphabétique. Par exemple, pour "bonjour tout le monde", le programme devrait retourner "bjnoru ottu el ddmeno".
+
+    \item \textbf{Exercice 38} \\
+    Écrivez un programme qui trouve tous les nombres parfaits inférieurs à un nombre donné. Un nombre parfait est un nombre égal à la somme de ses diviseurs propres (comme 6, qui est 1 + 2 + 3).
+
+    \item \textbf{Exercice 39} \\
+    Créez un programme qui prend une liste de nombres et calcule le produit de tous les éléments pairs, tout en additionnant les éléments impairs. Affichez le produit des pairs et la somme des impairs.
+
+    \item \textbf{Exercice 40} \\
+    Écrivez un programme qui génère les \texttt{n} premières lignes du triangle de Pascal et les affiche sous forme de liste de listes. Utilisez une boucle \texttt{for} pour construire chaque ligne.
+
+\end{enumerate}
+
+
+
+\subsection{Niveau 4}
+
+\begin{enumerate}
+
+    \item \textbf{Exercice 31} \\
+    Écrivez un programme qui trie une liste d'entiers en utilisant l'algorithme de tri par insertion. Ne pas utiliser les fonctions de tri intégrées de Python, mais seulement des boucles \texttt{for} et des comparaisons.
+
+    \item \textbf{Exercice 32} \\
+    Créez un programme qui prend une matrice (liste de listes) et calcule la somme des éléments de la diagonale principale (du coin supérieur gauche au coin inférieur droit). Utilisez une boucle \texttt{for} pour accéder aux éléments de la diagonale.
+
+    \item \textbf{Exercice 33} \\
+    Écrivez un programme qui génère tous les sous-ensembles possibles d'une liste donnée, sans utiliser de bibliothèques ou de fonctions prédéfinies pour le faire. Par exemple, pour \texttt{[1, 2, 3]}, le programme devrait générer \texttt{[[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]}.
+
+    \item \textbf{Exercice 34} \\
+    Créez un programme qui vérifie si deux chaînes de caractères sont des anagrammes (contiennent les mêmes lettres en quantités identiques, sans ordre particulier). Utilisez des boucles \texttt{for} pour compter et comparer les lettres de chaque chaîne.
+
+    \item \textbf{Exercice 35} \\
+    Écrivez un programme qui implémente l'algorithme de tri rapide (quick sort) en utilisant des boucles \texttt{for} et des fonctions récursives. Ne pas utiliser les fonctions de tri intégrées.
+
+    \item \textbf{Exercice 36} \\
+    Créez un programme qui prend une liste de chaînes de caractères et regroupe celles qui sont des anagrammes. Par exemple, pour \texttt{['rat', 'tar', 'art', 'bat', 'tab']}, le programme devrait retourner \texttt{[['rat', 'tar', 'art'], ['bat', 'tab']]}.
+
+    \item \textbf{Exercice 37} \\
+    Écrivez un programme qui utilise une boucle \texttt{for} pour générer les nombres de la suite de Fibonacci jusqu'à ce qu'un terme dépasse une valeur donnée par l'utilisateur. Affichez chaque terme généré.
+
+    \item \textbf{Exercice 38} \\
+    Créez un programme qui, donné un nombre entier positif, vérifie si ce nombre est un nombre parfait (c'est-à-dire égal à la somme de ses diviseurs propres). Par exemple, 6 est parfait car \texttt{1 + 2 + 3 = 6}.
+
+    \item \textbf{Exercice 39} \\
+    Écrivez un programme qui prend une matrice carrée (liste de listes) et vérifie si elle est symétrique (égale à sa transposée). Utilisez une boucle \texttt{for} pour comparer les éléments de la matrice.
+
+    \item \textbf{Exercice 40} \\
+    Créez un programme qui génère le triangle de Pascal jusqu'à une hauteur donnée. Utilisez une boucle \texttt{for} pour calculer chaque ligne du triangle. Par exemple, pour une hauteur de 5, le triangle doit ressembler à :
+    \begin{verbatim}
+        1
+       1 1
+      1 2 1
+     1 3 3 1
+    1 4 6 4 1
+    \end{verbatim}
+
+\end{enumerate}
+
+
+\section*{Exercices - Boucles for}
+\subsection{Niveau débutant}
+\begin{enumerate}
+
+    \item \textbf{Exercice 1} \\
+    Utilisez une boucle \texttt{while} pour afficher les nombres de 1 à 10.
+
+    \item \textbf{Exercice 2} \\
+    Créez une boucle \texttt{while} qui affiche les nombres pairs de 2 à 20.
+
+    \item \textbf{Exercice 3} \\
+    Utilisez une boucle \texttt{while} pour afficher les multiples de 3, de 3 à 30 inclus.
+
+    \item \textbf{Exercice 4} \\
+    Écrivez une boucle \texttt{while} qui affiche tous les nombres de 10 à 1, dans l'ordre décroissant.
+
+    \item \textbf{Exercice 5} \\
+    Utilisez une boucle \texttt{while} pour calculer et afficher la somme des nombres de 1 à 50.
+
+    \item \textbf{Exercice 6} \\
+    Utilisez une boucle \texttt{while} pour calculer et afficher la somme des nombres pairs entre 1 et 100.
+
+    \item \textbf{Exercice 7} \\
+    Écrivez une boucle \texttt{while} pour calculer et afficher le produit des nombres de 1 à 10.
+
+    \item \textbf{Exercice 8} \\
+    Créez une boucle \texttt{while} qui calcule la puissance de 2, de \(2^1\) à \(2^{10}\), et affiche chaque résultat.
+
+    \item \textbf{Exercice 9} \\
+    Utilisez une boucle \texttt{while} pour afficher la suite de Fibonacci, jusqu'au 10\textsuperscript{ème} terme.
+
+    \item \textbf{Exercice 10} \\
+    Utilisez une boucle \texttt{while} pour afficher les nombres de 1 à 100. Si un nombre est multiple de 3, affichez \texttt{Fizz} à la place, et si un nombre est multiple de 5, affichez \texttt{Buzz}. Si un nombre est multiple de 3 et de 5, affichez \texttt{FizzBuzz}.
+
+\end{enumerate}
+
+\end{document}
+
+\end{document}
