@@ -1,0 +1,230 @@
+
+
+\begin{enumerate}
+
+    \item \textbf{Calculer le nombre de façons d'obtenir une somme avec des dés} \\
+    Écrivez une fonction récursive \texttt{combinaisons\_des(somme, des)} qui calcule le nombre de façons d'obtenir une somme donnée en lançant un certain nombre de dés à $6$ faces.
+
+    \item \textbf{Lister tous les sous-ensembles d'un ensemble} \\
+    Écrivez une fonction récursive \texttt{sous\_ensembles(ensemble)} qui retourne tous les sous-ensembles d'un ensemble donné sous forme de liste.
+
+    \item \textbf{Calculer la puissance de deux en utilisant uniquement la récursivité} \\
+    Écrivez une fonction récursive \texttt{puissance\_de\_deux(n)} qui retourne $2^n$ en utilisant uniquement des appels récursifs et sans opérateur de puissance.
+
+    \item \textbf{Vérifier l'équilibre des parenthèses} \\
+    Écrivez une fonction récursive \texttt{equilibre\_parentheses(chaine)} qui vérifie si une chaîne de caractères contenant des parenthèses est correctement équilibrée.
+
+    \item \textbf{Trouver la profondeur maximale d'une liste imbriquée} \\
+    Écrivez une fonction récursive \texttt{profondeur\_maximale(lst)} qui retourne la profondeur maximale d'une liste contenant des sous-listes imbriquées.
+
+    \item \textbf{Calculer le produit scalaire de deux vecteurs} \\
+    Écrivez une fonction récursive \texttt{produit\_scalaire(vecteur1, vecteur2)} qui calcule le produit scalaire de deux listes de nombres de même longueur.
+
+    \item \textbf{Compter le nombre d’occurrences d'un mot dans une chaîne} \\
+    Écrivez une fonction récursive \texttt{compter\_mots(chaine, mot)} qui compte le nombre d'occurrences d'un mot donné dans une chaîne de caractères.
+
+    \item \textbf{Vérifier si une liste est triée} \\
+    Écrivez une fonction récursive \texttt{est\_triee(lst)} qui retourne \texttt{True} si la liste \texttt{lst} est triée en ordre croissant, sinon retourne \texttt{False}.
+
+    \item \textbf{Trouver tous les chemins dans une grille} \\
+    Écrivez une fonction récursive \texttt{nombre\_de\_chemins(m, n)} qui retourne le nombre de chemins possibles d'une position $(0, 0)$ à $(m, n)$ dans une grille, en ne se déplaçant que vers le bas ou la droite.
+
+    \item \textbf{Calculer la somme des éléments de la diagonale principale d'une matrice} \\
+    Écrivez une fonction récursive \texttt{somme\_diagonale(matrice)} qui retourne la somme des éléments de la diagonale principale d'une matrice carrée.
+
+    \item \textbf{Diviser une liste en deux parties égales} \\
+    Écrivez une fonction récursive \texttt{diviser\_liste(lst)} qui divise une liste en deux sous-listes d'éléments aussi proches que possible en taille.
+
+    \item \textbf{Trouver le nombre de façons de monter un escalier} \\
+    Écrivez une fonction récursive \texttt{façons\_escalier(n)} qui calcule le nombre de façons de monter un escalier de $n$ marches, sachant que l'on peut monter 1, 2 ou 3 marches à chaque pas.
+
+    \item \textbf{Générer toutes les permutations d'une chaîne de caractères} \\
+    Écrivez une fonction récursive \texttt{permutations(chaine)} qui génère toutes les permutations possibles d'une chaîne de caractères donnée.
+
+    \item \textbf{Calculer la somme des éléments d'une liste imbriquée, en doublant la profondeur} \\
+    Écrivez une fonction récursive \texttt{somme\_profondeur(lst)} qui calcule la somme de tous les éléments d'une liste imbriquée, en multipliant chaque élément par la profondeur de la liste où il se trouve.
+
+    \item \textbf{Vérifier si deux chaînes sont des anagrammes} \\
+    Écrivez une fonction récursive \texttt{est\_anagramme(chaine1, chaine2)} qui vérifie si deux chaînes sont des anagrammes.
+
+    \item \textbf{Inverser une pile en utilisant la récursivité} \\
+    Écrivez une fonction récursive \texttt{inverser\_pile(pile)} qui prend une pile représentée sous forme de liste et la renverse en utilisant uniquement des appels récursifs.
+
+    \item \textbf{Trouver le plus grand nombre dans une liste de listes imbriquées} \\
+    Écrivez une fonction récursive \texttt{maximum\_imbrique(lst)} qui retourne le plus grand nombre dans une liste contenant des sous-listes imbriquées.
+
+    \item \textbf{Compresser une chaîne de caractères en supprimant les doublons consécutifs} \\
+    Écrivez une fonction récursive \texttt{compresser(chaine)} qui retourne une nouvelle chaîne en supprimant les doublons consécutifs de la chaîne d'entrée.
+
+    \item \textbf{Vérifier si une liste contient une séquence cible} \\
+    Écrivez une fonction récursive \texttt{contient\_sequence(lst, sequence)} qui vérifie si une liste \texttt{lst} contient une séquence spécifique de valeurs.
+
+    \item \textbf{Fusionner deux listes triées en une seule liste triée} \\
+    Écrivez une fonction récursive \texttt{fusion\_listes(lst1, lst2)} qui fusionne deux listes triées en une seule liste triée.
+
+\end{enumerate}
+\begin{lstlisting}
+# Exercice 1 : Calculer le nombre de façons d'obtenir une somme avec des dés
+def combinaisons_des(somme, des):
+    if somme < 0:
+        return 0
+    if somme == 0:
+        return 1
+    if des == 0:
+        return 0
+    return combinaisons_des(somme - 1, des - 1) + combinaisons_des(somme - 6, des - 1)
+
+# Exercice 2 : Lister tous les sous-ensembles d'un ensemble
+def sous_ensembles(ensemble):
+    if not ensemble:
+        return [[]]
+    sous_ens = sous_ensembles(ensemble[1:])
+    return sous_ens + [[ensemble[0]] + sous for sous in sous_ens]
+
+# Exercice 3 : Calculer la puissance de deux en utilisant uniquement la récursivité
+def puissance_de_deux(n):
+    if n == 0:
+        return 1
+    return 2 * puissance_de_deux(n - 1)
+
+# Exercice 4 : Vérifier l'équilibre des parenthèses
+def equilibre_parentheses(chaine, count=0):
+    if count < 0:
+        return False
+    if not chaine:
+        return count == 0
+    if chaine[0] == '(':
+        return equilibre_parentheses(chaine[1:], count + 1)
+    elif chaine[0] == ')':
+        return equilibre_parentheses(chaine[1:], count - 1)
+    return equilibre_parentheses(chaine[1:], count)
+
+# Exercice 5 : Trouver la profondeur maximale d'une liste imbriquée
+def profondeur_maximale(lst):
+    if not isinstance(lst, list):
+        return 0
+    return 1 + max(profondeur_maximale(sous_lst) for sous_lst in lst)
+
+# Exercice 6 : Calculer le produit scalaire de deux vecteurs
+def produit_scalaire(vecteur1, vecteur2):
+    if not vecteur1 or not vecteur2:
+        return 0
+    return vecteur1[0] * vecteur2[0] + produit_scalaire(vecteur1[1:], vecteur2[1:])
+
+# Exercice 7 : Compter le nombre d occurrences d'un mot dans une chaîne
+def compter_mots(chaine, mot):
+    if len(chaine) < len(mot):
+        return 0
+    if chaine[:len(mot)] == mot:
+        return 1 + compter_mots(chaine[len(mot):], mot)
+    return compter_mots(chaine[1:], mot)
+
+# Exercice 8 : Vérifier si une liste est triée
+def est_triee(lst):
+    if len(lst) <= 1:
+        return True
+    return lst[0] <= lst[1] and est_triee(lst[1:])
+
+# Exercice 9 : Trouver tous les chemins dans une grille
+def nombre_de_chemins(m, n):
+    if m == 0 or n == 0:
+        return 1
+    return nombre_de_chemins(m - 1, n) + nombre_de_chemins(m, n - 1)
+
+# Exercice 10 : Calculer la somme des éléments de la diagonale principale d'une matrice
+def somme_diagonale(matrice, i=0):
+    if i == len(matrice):
+        return 0
+    return matrice[i][i] + somme_diagonale(matrice, i + 1)
+
+# Exercice 11 : Diviser une liste en deux parties égales
+def diviser_liste(lst):
+    if not lst:
+        return [], []
+    partie1, partie2 = diviser_liste(lst[2:])
+    return [lst[0]] + partie1, (partie2 if len(lst) < 2 else [lst[1]] + partie2)
+
+# Exercice 12 : Trouver le nombre de façons de monter un escalier
+def facons_escalier(n):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 0
+    return facons_escalier(n - 1) + facons_escalier(n - 2) + facons_escalier(n - 3)
+
+# Exercice 13 : Générer toutes les permutations d'une chaîne de caractères
+def permutations(chaine):
+    if len(chaine) == 0:
+        return [""]
+    perm = []
+    for i in range(len(chaine)):
+        for p in permutations(chaine[:i] + chaine[i+1:]):
+            perm.append(chaine[i] + p)
+    return perm
+
+# Exercice 14 : Calculer la somme des éléments d'une liste imbriquée, en doublant la profondeur
+def somme_profondeur(lst, profondeur=1):
+    total = 0
+    for el in lst:
+        if isinstance(el, list):
+            total += somme_profondeur(el, profondeur + 1)
+        else:
+            total += el * profondeur
+    return total
+
+# Exercice 15 : Vérifier si deux chaînes sont des anagrammes
+def est_anagramme(chaine1, chaine2):
+    if sorted(chaine1) == sorted(chaine2):
+        return True
+    return False
+
+# Exercice 16 : Inverser une pile en utilisant la récursivité
+def inverser_pile(pile):
+    if not pile:
+        return []
+    val = pile.pop()
+    res = inverser_pile(pile)
+    res.insert(0, val)
+    return res
+
+# Exercice 17 : Trouver le plus grand nombre dans une liste de listes imbriquées
+def maximum_imbrique(lst):
+    max_val = float('-inf')
+    for el in lst:
+        if isinstance(el, list):
+            max_val = max(max_val, maximum_imbrique(el))
+        else:
+            max_val = max(max_val, el)
+    return max_val
+
+# Exercice 18 : Compresser une chaîne de caractères en supprimant les doublons consécutifs
+def compresser(chaine):
+    if not chaine:
+        return ""
+    if len(chaine) == 1:
+        return chaine
+    if chaine[0] == chaine[1]:
+        return compresser(chaine[1:])
+    return chaine[0] + compresser(chaine[1:])
+
+# Exercice 19 : Vérifier si une liste contient une séquence cible
+def contient_sequence(lst, sequence):
+    if not sequence:
+        return True
+    if not lst:
+        return False
+    if lst[:len(sequence)] == sequence:
+        return True
+    return contient_sequence(lst[1:], sequence)
+
+# Exercice 20 : Fusionner deux listes triées en une seule liste triée
+def fusion_listes(lst1, lst2):
+    if not lst1:
+        return lst2
+    if not lst2:
+        return lst1
+    if lst1[0] < lst2[0]:
+        return [lst1[0]] + fusion_listes(lst1[1:], lst2)
+    else:
+        return [lst2[0]] + fusion_listes(lst1, lst2[1:])
+\end{lstlisting}

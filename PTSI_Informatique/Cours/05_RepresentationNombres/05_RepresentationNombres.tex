@@ -6,9 +6,9 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-\newcommand{\discipline}{Informatique -- PTSI}
+\newcommand{\discipline}{Informatique -- PTSI -- MPSI}
 \newcommand{\auteur}{Xavier Pessoles}
-\newcommand{\repRel}{../../..}
+\newcommand{\repRel}{../../../..}
 
 \input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
@@ -94,8 +94,7 @@
 %%%%%
 \newcommand{\repExo}{}
 \newcommand{\nomExo}{}
-%\newcounter{cptApplication}[chapter]
-%\newcounter{cptTD}[chapter]
+
 \AtBeginEnvironment{corrige}{\small}
 
 \livrettrue % Livrettrue :  eleve sans les corrections
@@ -104,67 +103,7 @@
 %%%%%
 
 
-\setcounter{chapter}{0}
-
-\newcommand{\repCours}{\repRel/Informatique/Cours/00_PriseEnMain/Cours}
-% ======= COURS ======= 
-%\graphicspath{{\repStyle/png}{\repCours/images/}}
-\setchapterimage{Fond_ALG.png}
-\setchapterpreamble[u]{\margintoc}
-\chapter*{Exercices d'entrainement à la programmation}
-\section{Exercices boucle \texttt{for}}
-\subsection{Niveau 1}
-\input{01_for_01.tex}
-\subsection{Niveau 2}
-\input{01_for_02.tex}
-\subsection{Niveau 3}
-\input{01_for_03.tex}
-\subsection{Niveau 4}
-\input{01_for_04.tex}
-
-
-\section{Exercices boucle \texttt{while}}
-\subsection{Niveau 1}
-\input{02_while_01.tex}
-\subsection{Niveau 2}
-\input{02_while_02.tex}
-\subsection{Niveau 3}
-\input{02_while_03.tex}
-
-\section{Exercices sur les \texttt{list}}
-\subsection{Niveau 1}
-\input{03_list_01.tex}
-\subsection{Niveau 2}
-\input{03_list_02.tex}
-\subsection{Niveau 3}
-\input{03_list_03.tex}
-
-\section{Exercices sur la récursivité}
-\subsection{Niveau 1}
-\input{04_rec_01.tex}
-\subsection{Niveau 2}
-\input{04_rec_02.tex}
-\subsection{Niveau 3}
-\input{04_rec_03.tex}
-
-% ===================== 
-%
-%\setcounter{cptApplication}{1}
-%\setcounter{cptTD}{1}
-%
-%% ========= Application ========= 
-%\renewcommand{\repExo}{\repRel/Informatique/Cours/01_Bases/}
-%\renewcommand{\nomExo}{Application_01}
-%\graphicspath{{\repStyle/png}{\repExo\nomExo/images}}
-%
-%\proffalse
-%\input{\repExo\nomExo/\nomExo}
-%\iflivret \else \proftrue
-%\input{\repExo\nomExo/\nomExo}
-%\fi
-%% ==========================
-%
-%
+\input{cours}
 
 
 \end{document}

@@ -1,0 +1,152 @@
+
+
+\begin{enumerate}
+
+    \item \textbf{Tuilage de Domino d'un Plateau $2 \times n$} \\
+    Écrivez une fonction récursive \texttt{tuilage(n)} qui calcule le nombre de façons possibles de recouvrir un plateau de $2 \times n$ avec des dominos $1 \times 2$. 
+
+    \item \textbf{Tour de Hanoï optimisée avec $n$ disques} \\
+    Écrivez une fonction récursive \texttt{tour\_de\_hanoi(n, depart, destination, auxiliaire)} qui affiche les étapes nécessaires pour résoudre la tour de Hanoï avec $n$ disques et trois poteaux. Comptez le nombre total de déplacements nécessaires.
+
+    \item \textbf{Calculer la somme des chemins d'une matrice avec des poids} \\
+    Écrivez une fonction récursive \texttt{somme\_chemins(matrice, x, y)} qui retourne la somme maximale possible en partant de la position $(0, 0)$ et en arrivant en bas à droite $(x, y)$ de la matrice. On ne peut se déplacer que vers le bas ou vers la droite.
+
+    \item \textbf{Diviser une chaîne en sous-chaînes palindromiques} \\
+    Écrivez une fonction récursive \texttt{partition\_palindromes(chaine)} qui divise une chaîne de caractères en sous-chaînes de manière à ce que chaque sous-chaîne soit un palindrome. Affichez toutes les partitions possibles.
+
+    \item \textbf{Calculer les arrangements d'objets avec des répétitions limitées} \\
+    Écrivez une fonction récursive \texttt{arrangements(ensemble, limite)} qui calcule toutes les dispositions possibles d'un ensemble d'éléments où chaque élément peut être utilisé jusqu'à un certain nombre de fois défini par \texttt{limite}.
+
+    \item \textbf{Compresser une liste de chaînes par fréquence} \\
+    Écrivez une fonction récursive \texttt{compresser\_frequence(lst)} qui compresse une liste de chaînes de caractères en indiquant la fréquence de chaque chaîne. Par exemple, \texttt{["a", "a", "b", "b", "b", "c"]} devient \texttt{["a:2", "b:3", "c:1"]}.
+
+    \item \textbf{Résoudre le problème de la somme de sous-ensemble} \\
+    Écrivez une fonction récursive \texttt{somme\_sous\_ensemble(lst, cible)} qui détermine s'il existe un sous-ensemble dans une liste de nombres \texttt{lst} qui a pour somme un nombre donné \texttt{cible}. Retournez \texttt{True} si un tel sous-ensemble existe, sinon \texttt{False}.
+
+    \item \textbf{Calculer le produit cartésien de plusieurs listes} \\
+    Écrivez une fonction récursive \texttt{produit\_cartesien(liste\_de\_listes)} qui retourne le produit cartésien de plusieurs listes. Par exemple, pour \texttt{[[1, 2], [3, 4]]}, la sortie doit être \texttt{[(1,3), (1,4), (2,3), (2,4)]}.
+
+    \item \textbf{Trouver tous les chemins uniques dans un labyrinthe} \\
+    Écrivez une fonction récursive \texttt{chemins\_labyrinthe(labyrinthe, x, y, chemin)} qui trouve tous les chemins uniques possibles dans un labyrinthe représenté par une matrice. Les cases valides sont indiquées par $1$ et les obstacles par $0$.
+
+    \item \textbf{Résoudre un Sudoku partiellement rempli} \\
+    Écrivez une fonction récursive \texttt{resoudre\_sudoku(grille)} qui résout un Sudoku partiellement rempli, représenté par une grille $9 \times 9$. Utilisez une approche de backtracking pour remplir chaque case vide avec les nombres de $1$ à $9$.
+
+\end{enumerate}
+
+\begin{lstlisting}
+# Exercice 1 : Tuilage de Domino d'un Plateau 2 x n
+def tuilage(n):
+    if n == 0 or n == 1:
+        return 1
+    return tuilage(n - 1) + tuilage(n - 2)
+    
+# Exercice 2 : Tour de Hanoï optimisée avec n disques
+def tour_de_hanoi(n, depart, destination, auxiliaire):
+    if n == 1:
+        print(f"Déplace le disque 1 de {depart} vers {destination}")
+        return 1
+    moves = tour_de_hanoi(n - 1, depart, auxiliaire, destination)
+    print(f"Déplace le disque {n} de {depart} vers {destination}")
+    moves += 1
+    moves += tour_de_hanoi(n - 1, auxiliaire, destination, depart)
+    return moves
+
+# Exercice 3 : Calculer la somme des chemins d'une matrice avec des poids
+def somme_chemins(matrice, x, y):
+    if x == 0 and y == 0:
+        return matrice[0][0]
+    elif x < 0 or y < 0:
+        return float('-inf')
+    else:
+        return matrice[x][y] + max(somme_chemins(matrice, x-1, y), somme_chemins(matrice, x, y-1))
+
+# Exercice 4 : Diviser une chaîne en sous-chaînes palindromiques
+def est_palindrome(s):
+    return s == s[::-1]
+
+def partition_palindromes(chaine, resultat=None):
+    if resultat is None:
+        resultat = []
+    if not chaine:
+        print(resultat)
+        return
+    for i in range(1, len(chaine) + 1):
+        prefix = chaine[:i]
+        if est_palindrome(prefix):
+            partition_palindromes(chaine[i:], resultat + [prefix])
+
+# Exercice 5 : Calculer les arrangements d'objets avec des répétitions limitées
+def arrangements(ensemble, limite, courant=[]):
+    if sum(courant) == limite:
+        print(courant)
+        return
+    for i in ensemble:
+        if sum(courant) + i <= limite:
+            arrangements(ensemble, limite, courant + [i])
+
+# Exercice 6 : Compresser une liste de chaînes par fréquence
+def compresser_frequence(lst, index=0, resultat=None):
+    if resultat is None:
+        resultat = []
+    if index >= len(lst):
+        return resultat
+    count = 1
+    while index + count < len(lst) and lst[index] == lst[index + count]:
+        count += 1
+    resultat.append(f"{lst[index]}:{count}")
+    return compresser_frequence(lst, index + count, resultat)
+
+# Exercice 7 : Résoudre le problème de la somme de sous-ensemble
+def somme_sous_ensemble(lst, cible, index=0):
+    if cible == 0:
+        return True
+    if index >= len(lst) or cible < 0:
+        return False
+    return somme_sous_ensemble(lst, cible - lst[index], index + 1) or somme_sous_ensemble(lst, cible, index + 1)
+
+# Exercice 8 : Calculer le produit cartésien de plusieurs listes
+def produit_cartesien(liste_de_listes, index=0, courant=[]):
+    if index == len(liste_de_listes):
+        print(tuple(courant))
+        return
+    for element in liste_de_listes[index]:
+        produit_cartesien(liste_de_listes, index + 1, courant + [element])
+
+# Exercice 9 : Trouver tous les chemins uniques dans un labyrinthe
+def chemins_labyrinthe(labyrinthe, x, y, chemin=[]):
+    if x >= len(labyrinthe) or y >= len(labyrinthe[0]) or labyrinthe[x][y] == 0:
+        return
+    if (x, y) == (len(labyrinthe) - 1, len(labyrinthe[0]) - 1):
+        print(chemin + [(x, y)])
+        return
+    labyrinthe[x][y] = 0  # marquer comme visité
+    chemins_labyrinthe(labyrinthe, x + 1, y, chemin + [(x, y)])
+    chemins_labyrinthe(labyrinthe, x, y + 1, chemin + [(x, y)])
+    labyrinthe[x][y] = 1  # annuler la visite
+
+# Exercice 10 : Résoudre un Sudoku partiellement rempli
+def est_valide(grille, ligne, col, num):
+    for i in range(9):
+        if grille[ligne][i] == num or grille[i][col] == num:
+            return False
+    bloc_x, bloc_y = 3 * (ligne // 3), 3 * (col // 3)
+    for i in range(3):
+        for j in range(3):
+            if grille[bloc_x + i][bloc_y + j] == num:
+                return False
+    return True
+
+def resoudre_sudoku(grille):
+    for i in range(9):
+        for j in range(9):
+            if grille[i][j] == 0:
+                for num in range(1, 10):
+                    if est_valide(grille, i, j, num):
+                        grille[i][j] = num
+                        if resoudre_sudoku(grille):
+                            return True
+                        grille[i][j] = 0
+                return False
+    return True
+\end{lstlisting}

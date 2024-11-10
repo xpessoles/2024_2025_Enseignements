@@ -1,0 +1,22 @@
+\setcounter{chapter}{3}
+
+\newcommand{\repCours}{\repRel/Informatique/Cours/02_RepresentationNombres/Cours}
+% ======= COURS ======= 
+\graphicspath{{\repStyle/png}{\repCours/images/}}
+\input{\repCours/02_RepresentationNombres.tex}
+% ===================== 
+
+\setcounter{cptApplication}{1}
+\setcounter{cptTD}{1}
+
+% ========= Application ========= 
+\renewcommand{\repExo}{\repRel/Informatique/Cours/02_RepresentationNombres/Application_01}
+\renewcommand{\nomExo}{Application_01}
+\graphicspath{{\repStyle/png}{\repExo/Application_01/images}}
+
+\proffalse
+\input{\repExo/\nomExo}
+\iflivret \else \proftrue
+\input{\repExo/\nomExo}
+\fi
+% ==========================
