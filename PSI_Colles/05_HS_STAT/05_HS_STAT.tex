@@ -1,3 +1,4 @@
+
 % Load the kaobook class
 \documentclass[
 	fontsize=10pt, % Base font size
@@ -6,10 +7,9 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI}
 \newcommand{\auteur}{Xavier Pessoles}
-\newcommand{\repRel}{../../../..}
+\newcommand{\repRel}{../../..}
 
 \input{\repRel/Style/packages_v2}
 \newcommand{\repStyle}{\repRel/Style}
@@ -18,13 +18,14 @@
 \usepackage{\repStyle/UPSTI_pedagogique}
 
 
+% Choose the language
 \frenchsetup{StandardItemLabels=true}
-%% \usepackage[english=british]{csquotes}	% English quotes
+
 
 
 % Load the bibliography package
 \usepackage{kaobiblio}
-\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
 \usepackage{kaotheorems}
@@ -44,7 +45,7 @@
 %%----------------------------------------------------------------------------------------
 
 \titlehead{Document Template}
-\title[SII en PSI*]{SII en PSI*}
+\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
 \author[XP]{Xavier Pessoles}
 \date{\today}
 %\publishers{An Awesome Publisher}
@@ -52,22 +53,13 @@
 %----------------------------------------------------------------------------------------
 %
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
-%
 
-%%----------------------------------------------------------------------------------------
-%%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
-%%----------------------------------------------------------------------------------------
-%
-%\begingroup % Local scope for the following commands
-%\tableofcontents % Output the table of contents
-%\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
-
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
 
 \setchapterstyle{kao}
 
@@ -76,31 +68,68 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
-%\pagestyle{xp.test}
-
-
-%\input{\repStyle/Cycle_01_Entete}
 
 
 
 %%%%%
-\newcommand{\repExo}{Application_01_ROV}
-\newcommand{\nomExo}{Application_01_ROV}
-%\newcounter{cptApplication}[chapter]
-%\newcounter{cptTD}[chapter]
+\newcommand{\repExo}{}
+\newcommand{\nomExo}{}
 \AtBeginEnvironment{corrige}{\small}
 
 \livrettrue % Livrettrue :  eleve sans les corrections
+
 \colletrue
+\normaltrue
 %%%%%
+\proftrue
+\proffalse
+
 \newcommand{\exer}{\subsection*}
 
 
-\setcounter{chapter}{5}
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/CHS/CHS-03-HS}
+\renewcommand{\nomExo}{71_Robovolc}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
 
-\input{exos}
 
 
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/STAT/STAT-03-Demarche}
+\renewcommand{\nomExo}{06_TR}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\cleardoublepage
+
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/CHS/CHS-03-HS}
+\renewcommand{\nomExo}{81_Piaggio}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/STAT/STAT-03-Demarche}
+\renewcommand{\nomExo}{07_RR3D}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\cleardoublepage
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/CHS/CHS-03-HS}
+\renewcommand{\nomExo}{84_Nacelle}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+
+
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/STAT/STAT-03-Demarche}
+\renewcommand{\nomExo}{08_RR3D}
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+\cleardoublepage
 
 
 \end{document}
+
+
