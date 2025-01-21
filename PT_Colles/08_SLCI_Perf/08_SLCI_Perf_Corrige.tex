@@ -1,0 +1,149 @@
+% Load the kaobook class
+\documentclass[
+	fontsize=10pt, % Base font size
+	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
+	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+%%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
+]{kaobook}
+
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PT -- PT$\star$}
+\newcommand{\auteur}{Xavier Pessoles}
+\newcommand{\repRel}{../../..}
+
+\input{\repRel/Style/packages_v2}
+\newcommand{\repStyle}{\repRel/Style}
+\input{\repRel/Style/macros_SII_v2}
+\input{\repRel/Style/environment_v2}
+\usepackage{\repStyle/UPSTI_pedagogique}
+
+
+% Choose the language
+\frenchsetup{StandardItemLabels=true}
+
+
+
+% Load the bibliography package
+\usepackage{kaobiblio}
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+
+% Load mathematical packages for theorems and related environments
+\usepackage{kaotheorems}
+
+% Load the package for hyperreferences
+\usepackage{kaorefs}
+
+\graphicspath{{images/}{./}} % Paths where images are looked for
+
+\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+
+
+\begin{document}
+
+%%----------------------------------------------------------------------------------------
+%%	BOOK INFORMATION
+%%----------------------------------------------------------------------------------------
+
+\titlehead{Document Template}
+\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
+\author[XP]{Xavier Pessoles}
+\date{\today}
+%\publishers{An Awesome Publisher}
+
+%----------------------------------------------------------------------------------------
+%
+\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+
+
+%%----------------------------------------------------------------------------------------
+%%	MAIN BODY
+%%----------------------------------------------------------------------------------------
+%
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+
+\setchapterstyle{kao}
+
+\setcounter{margintocdepth}{\sectiontocdepth}
+\marginlayout
+\graphicspath{{\repStyle/png}}
+
+\pagestyle{xp.scrheadings}
+
+
+
+%%%%%
+\newcommand{\repExo}{}
+\newcommand{\nomExo}{}
+\AtBeginEnvironment{corrige}{\small}
+\newcommand{\exer}{\subsection*}
+
+\livrettrue % Livrettrue :  eleve sans les corrections
+\colletrue
+\normaltrue
+\proftrue
+%\proffalse%
+
+%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-11-DiagrammeBode}
+\renewcommand{\nomExo}{510_03_Divers}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_Cy_01_ModelisationSystemes/Ch_02_RevisionsSLCI/}
+\renewcommand{\nomExo}{Cy_01_Ch_02_Colle_01_MC2E_Ordre2}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+%%%%%%%%%%
+\cleardoublepage
+
+%
+%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-11-DiagrammeBode}
+\renewcommand{\nomExo}{510_04_Divers}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+\renewcommand{\repExo}{\repRel/PSI_Cy_02_PredictionPerfomances/Chapitre_03_Precision/}
+\renewcommand{\nomExo}{Cy_02_Ch_03_TD_01_FauteuilDynamique}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+%%%%%%%%%%
+\cleardoublepage
+
+
+%%%%%%%%%%
+\renewcommand{\repExo}{\repRel/PSI_ExercicesCompetences/SLCI/SLCI-11-DiagrammeBode}
+\renewcommand{\nomExo}{510_05_Divers}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+
+\renewcommand{\repExo}{\repRel/PSI_Cy_02_PredictionPerfomances/Chapitre_04_Revisions/}
+\renewcommand{\nomExo}{Cy_02_Ch_04_TD_01_RobotCables}
+
+\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+\input{\repExo/\nomExo/\nomExo.tex}
+
+%%%%%%%%%%
+%\cleardoublepage
+
+%%%%%%%%%%%
+%\normaltrue
+%\difficilefalse
+%\tdifficilefalse
+%\renewcommand{\repExo}{\repRel/PSI_Cy_04_ModelisationDynamique/Chapitre_03_Methodologie/PFD_CO/}
+%\renewcommand{\nomExo}{Cy_04_03_PFD_CO_TD_03_Gyrolock}
+%
+%\graphicspath{{\repRel/Style/png/}{\repExo/\nomExo/images/}}
+%\input{\repExo/\nomExo/\nomExo.tex}
+%%%%%%%%%%%
+
+
+\end{document}
+
+
