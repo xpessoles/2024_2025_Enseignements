@@ -6,7 +6,8 @@
 %%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
 ]{kaobook}
 
-\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur --  PSI}%$\star$}
+
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
 \newcommand{\auteur}{Xavier Pessoles}
 \newcommand{\repRel}{../../..}
 
@@ -17,14 +18,12 @@
 \usepackage{\repStyle/UPSTI_pedagogique}
 
 
-% Choose the language
 \frenchsetup{StandardItemLabels=true}
-
 
 
 % Load the bibliography package
 \usepackage{kaobiblio}
-%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
 
 % Load mathematical packages for theorems and related environments
 \usepackage{kaotheorems}
@@ -43,8 +42,8 @@
 %%	BOOK INFORMATION
 %%----------------------------------------------------------------------------------------
 
-\titlehead{Document Template}
-\title[SII en PSI* - Xavier Pessoles]{SII en PSI* - Xavier Pessoles}
+\titlehead{Introduction aux réseaux de neurones}
+\title[SII en PSI*]{SII en PSI*}
 \author[XP]{Xavier Pessoles}
 \date{\today}
 %\publishers{An Awesome Publisher}
@@ -52,13 +51,22 @@
 %----------------------------------------------------------------------------------------
 %
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
+%
 
+%%----------------------------------------------------------------------------------------
+%%	TABLE OF CONTENTS & LIST OF FIGURES/TABLES
+%%----------------------------------------------------------------------------------------
+%
+%\begingroup % Local scope for the following commands
+%\tableofcontents % Output the table of contents
+%\endgroup
 
 %%----------------------------------------------------------------------------------------
 %%	MAIN BODY
 %%----------------------------------------------------------------------------------------
 %
-\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic numbers
+
 
 \setchapterstyle{kao}
 
@@ -67,23 +75,30 @@
 \graphicspath{{\repStyle/png}}
 
 \pagestyle{xp.scrheadings}
+%\pagestyle{xp.test}
+
+
+%\input{\repStyle/Cycle_01_Entete}
 
 
 
 %%%%%
-\newcommand{\repExo}{}
-\newcommand{\nomExo}{}
+\newcommand{\repExo}{Application_01_ROV}
+\newcommand{\nomExo}{Application_01_ROV}
+%\newcounter{cptApplication}[chapter]
+%\newcounter{cptTD}[chapter]
 \AtBeginEnvironment{corrige}{\small}
-\newcommand{\exer}{\subsection*}
 
 \livrettrue % Livrettrue :  eleve sans les corrections
-\colletrue
+\collefalse
+%%%%%
+
+
+\setcounter{chapter}{17}
+
 \normaltrue
-\proftrue
-\proffalse
+\input{01_RN}
 
 
 
-
-\input{01_correcteurs.tex}
 \end{document}
