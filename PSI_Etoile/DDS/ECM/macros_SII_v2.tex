@@ -1,0 +1,505 @@
+%%%%%%%%%%%%
+% Booleéns
+%%%%%%%%%%%%
+
+% Définition des booleéns
+\newif\iffiche
+\newif\ifprof
+\newif\iftd
+\newif\ifcours
+\newif\ifnormal
+\newif\ifdifficile
+\newif\iftdifficile
+\newif\ifcolle
+\newif\iflivret
+\newif\ifTP
+\newif\ifcorrige
+\newif\ifDS
+\newif\ifcorrection % Existence des corrections pour les DDS
+
+\newcommand{\titrechapitre}{}
+
+%%%%%%%%%%%%
+% Définition des vecteurs 
+%%%%%%%%%%%%
+
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\axe}[2]{\left(#1,\vect{#2}\right)}
+\newcommand{\couple}[2]{\left(#1,\vect{#2}\right)}
+\newcommand{\angl}[2]{\left(\vect{#1},\vect{#2}\right)}
+
+\newcommand{\rep}[1]{\mathcal{R}_{#1}}
+\newcommand{\bas}[1]{\mathcal{B}_{#1}}
+\newcommand{\quadruplet}[4]{\left(#1;#2,#3,#4 \right)}
+\newcommand{\repere}[4]{\left(#1;\vect{#2},\vect{#3},\vect{#4} \right)}
+\newcommand{\base}[3]{\left(\vect{#1},\vect{#2},\vect{#3} \right)}
+
+
+\newcommand{\vx}[1]{\vect{x_{#1}}}
+\newcommand{\vy}[1]{\vect{y_{#1}}}
+\newcommand{\vz}[1]{\vect{z_{#1}}}
+\newcommand{\vX}[1]{\vect{X_{#1}}}
+\newcommand{\vY}[1]{\vect{Y_{#1}}}
+\newcommand{\vZ}[1]{\vect{Z_{#1}}}
+\newcommand{\vi}[1]{\vect{i_{#1}}}
+\newcommand{\vj}[1]{\vect{j_{#1}}}
+\newcommand{\vk}[1]{\vect{k_{#1}}}
+\newcommand{\vAB}{\vect{AB}}
+\newcommand{\vBA}{\vect{BA}}
+\newcommand{\vBC}{\vect{BC}}
+\newcommand{\vCB}{\vect{CB}}
+\newcommand{\vCA}{\vect{CA}}
+\newcommand{\vAC}{\vect{AC}}
+
+
+% d droit pour le calcul différentiel
+\newcommand{\dd}{\text{d}}
+\newcommand{\deriv}[2]{ \dfrac{ \dd }{\dd t} \left[  #1\right]_{#2}}
+\newcommand{\dderiv}[2]{ \dfrac{ \dd^2 }{\dd t^2} \left[  #1\right]_{#2}}
+
+% dérivée
+\newcommand{\varphip}{\dot{\varphi}}
+\newcommand{\varphipp}{\ddot{\varphi}}
+
+\newcommand{\thetap}{\dot{\theta}}
+\newcommand{\thetapp}{\ddot{\theta}}
+
+\newcommand{\lambdap}{\dot{\lambda}}
+\newcommand{\lambdapp}{\ddot{\lambda}}
+
+\newcommand{\alphap}{\dot{\alpha}}
+\newcommand{\alphapp}{\ddot{\alpha}}
+
+\newcommand{\betap}{\dot{\beta}}
+\newcommand{\betapp}{\ddot{\beta}}
+
+\newcommand{\gammap}{\dot{\gamma}}
+\newcommand{\gammapp}{\ddot{\gamma}}
+
+\newcommand{\deltap}{\dot{\delta}}
+\newcommand{\deltapp}{\ddot{\delta}}
+
+\newcommand{\mup}{\dot{\mu}}
+\newcommand{\mupp}{\ddot{\mu}}
+
+
+\newcommand{\omegap}{\dot{\omega}}
+\newcommand{\omegapp}{\ddot{\omega}}
+
+% Indice en mode texte dans des équations
+\newcommand{\indice}[2]{{#1}_{\text{#2}}}
+
+\newcommand{\inertie}[2]{I_{#1}\left( #2\right)}
+\newcommand{\matinertie}[7]{
+\begin{pmatrix}
+#1 & #6 & #5 \\
+#6 & #2 & #4 \\
+#5 & #4 & #3 \\
+\end{pmatrix}_{#7}}
+%%%%%%%%%%%%
+% Définition des torseurs 
+%%%%%%%%%%%%
+
+\newcommand{\ec}[2]{%
+\mathcal{E}_c\left(#1/#2\right)}
+
+\newcommand{\pext}[3]{%
+\mathcal{P}\left(#1\rightarrow#2/#3\right)}
+
+\newcommand{\pint}[3]{%
+\mathcal{P}\left(#1 \stackrel{\text{#3}}{\leftrightarrow} #2\right)}
+
+
+ \newcommand{\torseur}[1]{%
+\left\{{#1}\right\}
+}
+
+\newcommand{\torseurcin}[3]{%
+\left\{\mathcal{#1} \left(#2/#3 \right) \right\}
+}
+
+\newcommand{\torseurci}[2]{%
+%\left\{\sigma \left(#1/#2 \right) \right\}
+\left\{\mathcal{C} \left(#1/#2 \right) \right\}
+}
+\newcommand{\torseurdyn}[2]{%
+\left\{\mathcal{D} \left(#1/#2 \right) \right\}
+}
+
+
+\newcommand{\torseurstat}[3]{%
+\left\{\mathcal{#1} \left(#2\rightarrow #3 \right) \right\}
+}
+
+
+ \newcommand{\torseurc}[8]{%
+%\left\{#1 \right\}=
+\left\{
+{#1}
+\right\}
+ = 
+\left\{%
+\begin{array}{cc}%
+{#2} & {#5}\\%
+{#3} & {#6}\\%
+{#4} & {#7}\\%
+\end{array}%
+\right\}_{#8}%
+}
+
+ \newcommand{\torseurcol}[7]{
+\left\{%
+\begin{array}{cc}%
+{#1} & {#4}\\%
+{#2} & {#5}\\%
+{#3} & {#6}\\%
+\end{array}%
+\right\}_{#7}%
+}
+
+ \newcommand{\torseurl}[3]{%
+%\left\{\mathcal{#1}\right\}_{#2}=%
+\left\{%
+\begin{array}{l}%
+{#1} \\%
+{#2} %
+\end{array}%
+\right\}_{#3}%
+}
+
+% Vecteur vitesse
+\newcommand{\vectv}[3]{%
+\vect{V\left( {#1} , {#2}/{#3}\right)}
+}
+
+% Vitesse du point
+\newcommand{\vectvp}[2]{%
+\vect{V\left( {#1} /{#2}\right)}
+}
+
+% Vecteur force
+\newcommand{\vectf}[2]{%
+\vect{R\left( {#1} \rightarrow {#2}\right)}
+}
+
+% Vecteur moment stat
+\newcommand{\vectm}[3]{%
+\vect{\mathcal{M}\left( {#1}, {#2} \rightarrow {#3}\right)}
+}
+
+
+
+
+% Vecteur résultante cin
+\newcommand{\vectrc}[2]{%
+\vect{R_c \left( {#1}/ {#2}\right)}
+}
+% Vecteur moment cin
+\newcommand{\vectmc}[3]{%
+\vect{\sigma \left( {#1}, {#2} /{#3}\right)}
+}
+
+
+% Vecteur résultante dyn
+\newcommand{\vectrd}[2]{%
+\vect{R_d \left( {#1}/ {#2}\right)}
+}
+% Vecteur moment dyn
+\newcommand{\vectmd}[3]{%
+\vect{\delta \left( {#1}, {#2} /{#3}\right)}
+}
+
+% Vecteur accélération
+ \newcommand{\vectg}[3]{%
+\vect{\Gamma \left( {#1}, {#2}/{#3}\right)}
+}
+% Vecteur accélération du point
+ \newcommand{\vectgp}[2]{%
+\vect{\Gamma \left( {#1}/{#2}\right)}
+}
+
+% Vecteur omega
+ \newcommand{\vecto}[2]{%
+\vect{\Omega\left( {#1}/{#2}\right)}
+}
+% }$$\left\{\mathcal{#1} \right\}_{#2} =%
+% \left\{%
+% \begin{array}{c}%
+%  #3 \\%
+%  #4 %
+% \end{array}%
+% \right\}_{#5}}
+
+%Varignon statique
+ \newcommand{\babars}[4]{%
+\vectm{#1}{#3}{#4}=\vectm{#2}{#3}{#4}+\vect{#1#2}\wedge \vectf{#3}{#4}
+}
+
+%Varignon dynamique
+ \newcommand{\babard}[4]{%
+\vectmd{#1}{#3}{#4}=\vectmd{#2}{#3}{#4}+\vect{#1#2}\wedge \vectrd{#3}{#4}
+}
+%Varignon dynamique projet&
+
+ \newcommand{\babardp}[5]{%
+\vectmd{#1}{#3}{#4}\cdot {#5}=\left(\vectmd{#2}{#3}{#4}+\vect{#1#2}\wedge \vectrd{#3}{#4} \right)\cdot {#5}
+}
+
+%Varignon cinématique
+ \newcommand{\babarv}[4]{%
+\vectv{#1}{#3}{#4}=\vectv{#2}{#3}{#4}+\vect{#1#2}\wedge \vecto{#3}{#4}
+}
+
+%% SLCI
+% Ordre 1
+\newcommand{\ordreun}{\dfrac{K}{1+\tau p}}
+
+\newcommand{\ordreunopt}[2]{\dfrac{#1}{1+#2 p}}
+% Ordre 2
+\newcommand{\ordredeux}{\dfrac{K}{1+\dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}}
+% K, xi, om0
+\newcommand{\ordredeuxopt}[3]{\dfrac{#1}{1+\dfrac{2 #2}{#3}p+\dfrac{p^2}{#3^2}}}
+
+
+% MCC
+\newcommand{\mccel}{U(t)=E(t)+RI(t)+L\dfrac{\dd i(t)}{\dd t}}
+%\newcommand{\mccmeca}{J \dfrac{\dd \omega(t)}{\dd t}=C }
+
+
+% Théorème de la valeur finale
+\newcommand{\tvf}[1]{\lim\limits_{t\to +\infty} #1(t) = \lim\limits_{p\to 0} p #1(p)}
+
+%%%% MATHS
+% macros utilisées pour les maths et l'info
+% ce fichier n'est pas concerné par la mise en page.
+\DeclareMathOperator*{\mygrando}{O}
+\DeclareMathOperator{\return}{\mathrm{return}}
+\DeclareMathOperator{\card}{\mathrm{card}}
+\newcommand{\grando}{\mygrando\limits}
+\newcommand{\unif}{\mathcal{U}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+%
+\newcommand{\cA}{\mathscr{A}}
+\newcommand{\cM}{\mathscr{M}}
+\newcommand{\cL}{\mathscr{L}}
+\newcommand{\cS}{\mathscr{S}}
+%
+%\newcommand{\e}{\mathrm{e}}
+%
+\newcommand{\eps}{\varepsilon}
+%
+\newcommand{\z}[1]{\Z_{#1}}
+\newcommand{\ztimes}[1]{\Z_{#1}^{\times}}
+\newcommand{\ii}[1]{[\![#1[\![}
+\newcommand{\iif}[1]{[\![#1]\!]}
+\newcommand{\llbr}{\ensuremath{\llbracket}}
+\newcommand{\rrbr}{\ensuremath{\rrbracket}}
+%\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\ens}[1]{\left\{ #1 \right\}}
+\newcommand{\croch}[1]{\left[ #1 \right]}
+%\newcommand{\of}[1]{\lstinline{#1}}
+% \newcommand{\py}[2]{%
+%   \begin{tabular}{|l}
+%     \lstinline+>>>+\textbf{\of{#1}}\\
+%     \of{#2}
+%   \end{tabular}\par{}
+% }
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\abs}[1]{\left|#1\right|}
+% \fct{A}{B}{x}{e} :
+% A  --> B
+% x |--> e
+
+
+
+% Matrices
+\newcommand{\mat}[1]{
+  \begin{pmatrix}
+    #1
+  \end{pmatrix}
+}
+\newcommand{\inv}{\ensuremath{^{-1}}}
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+% Ponctuation et mots pour les équations
+
+\newcommand{\pt}{\enspace .}
+\newcommand{\virg}{\enspace ,}
+\newcommand{\ptvirg}{\enspace ;}
+\newcommand{\ptint}{\enspace ?}
+% \newcommand{\et}{~\textrm{ et }~}
+\newcommand{\soit}{~\textrm{ soit }~}
+% \newcommand{\ou}{~\textrm{ ou }~}
+%\newcommand{\si}{~\textrm{ si }~} %% Incompatible avec siunitx
+\newcommand{\sinon}{~\textrm{ sinon }~}
+\newcommand{\avec}{~\textrm{ avec }~}
+\newcommand{\donc}{~\textrm{ donc }~}
+\newcommand{\tq}{\text{ tq }~}
+
+\newcommand{\norm}[1]{\ensuremath{\left\Vert {#1}\right\Vert}}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+
+
+%Binaire, octal, hexa
+%%\newcommand{\hex}[1]{\underline{\text{\texttt{#1}}}_{16}}
+%%\newcommand{\oct}[1]{\underline{\text{\texttt{#1}}}_{8}}
+%%\newcommand{\bin}[1]{\underline{\text{\texttt{#1}}}_{2}}
+%%\DeclareMathOperator{\mmod}{\texttt{\%}}
+
+
+% Fonctions et systèmes
+\newcommand{\fct}[5][t]{%
+  \begin{array}[#1]{rcl}
+    #2 & \rightarrow & #3\\
+    #4 & \mapsto     & #5\\
+  \end{array}
+}
+\newcommand{\fonction}[5]{#1 : \left\{\begin{array}{rcl} #2& \longrightarrow &#3 \\ #4 &\longmapsto & #5\end{array}\right.}
+\newenvironment{systeme}{\left\{ \begin{array}{rcl}}{\end{array}\right.}
+
+% Matrices
+% \newcommand{\mat}[1]{
+  % \begin{pmatrix}
+    % #1
+  % \end{pmatrix}
+% }
+%\newcommand{\inv}{\ensuremath{^{-1}}}
+%\newcommand{\bpm}{\begin{pmatrix}}
+%\newcommand{\epm}{\end{pmatrix}}
+
+
+% bases de données
+\newcommand{\relat}[1]{\textsc{#1}}
+\newcommand{\attr}[1]{\emph{#1}}
+\newcommand{\prim}[1]{\uline{#1}}
+\newcommand{\foreign}[1]{\#\textsl{#1}}
+
+%%%%%%
+%Macro Jean-Philippe Berne
+%%%%%%
+\def\Frac#1#2{\displaystyle{#1\over #2}}
+\def\o#1{\mathrel{\mathop{\kern 0pt o}\limits_{#1}}}
+\def\O#1{\mathrel{\mathop{\kern 0pt O}\limits_{#1}}}
+
+% abr\'eviations
+%
+
+\def\x{\times}
+\def\d{{\rm{d}}}
+\def\<{\leqslant}
+\def\le{\leqslant}
+\def\>{\geqslant}
+\def\ge{\geqslant}
+%\def\virg{,\quad}
+%\def\tq{\ / \ }
+%\def\qqsoit{\forall\,}
+%\def\existe{\exists\,}
+%\def\ssi{{\bf{ssi}}\ \ }
+%\def\ens{ensemble }
+%\def\enss{ensembles }
+%\def\elt{\'el\'ement }
+%\def\elts{\'el\'ements }
+%\def\ev{espace vectoriel }
+%\def\evs{espaces vectoriels }
+%\def\sev{sous-espace vectoriel }
+%\def\sevs{sous-espaces vectoriels }
+%\def\pol{polynôme }
+%\def\pols{polynômes }
+%\def\polcar{polynôme caract\'eristique }
+%\def\fct{fonction }
+%\def\fcts{fonctions }
+%\def\fcont{fonction continue }
+%\def\fconts{fonctions continues }
+%\def\appl{application }
+%\def\appls{applications }
+%\def\AL{application lin\'eaire }
+%\def\ALS{applications lin\'eaires }
+%\def\evdf{espace vectoriel de dimension finie }
+%\def\evsdf{espaces vectoriels de dimension finie }
+%\def\CNS{condition n\'ecessaire et suffisante }
+%\def\CN{condition n\'ecessaire }
+%\def\CS{condition suffisante }
+%\def\endo{endomorphisme }
+%\def\endos{endomorphismes }
+%\let\Equ=\Longleftrightarrow
+%\let\equ=\Leftrightarrow
+%\let\impl=\Rightarrow
+%\let\Impl=\Longrightarrow
+%\let\fld=\rightarrow
+%\let\Fld=\longrightarrow
+%\let\flg=\leftarrow
+%\let\Flg=\longleftarrow
+%\let\donne=\mapsto
+%\def\Donne{\,\longmapsto\,}
+%\let\dst=\displaystyle
+%\let\tst=\textstyle
+%\let\sst=\scriptstyle
+%\let\vide=\emptyset
+%\let\inclus=\subset
+%\let\moins=\setminus
+%\let\drond=\partial
+%\let\ep=\wp
+%\let\infini=\infty
+%\let\mult=\times
+%\let\l=\lambda
+%\let\Cap=\bigcap
+%\let\Cup=\bigcup
+%\let\Oplus=\bigoplus
+%\let\ve=\vee
+%\let\Ve=\bigvee
+%\def\vect{{\textrm{Vect }}}
+%\def\dl{d\'eveloppement limit\'e }
+%\def\dla{d\'eveloppement limit\'e asymptotique }
+%\def\valp{valeur propre }
+%\def\valps{valeurs propres }
+%\def\vectp{vecteur propre }
+%\def\vectps{vecteurs propres }
+%\def\sep{sous-espace propre }
+%\def\seps{sous-espaces propres }
+%\def\ED{\'equation diff\'erentielle }
+%\def\PS{produit scalaire }
+%\def\oij{(0,\vec{\iota},\vec\jmath)}
+%\def\vct#1{\kern 2pt\overrightarrow{\kern -2pt #1}}
+%\def\rot{\vct{\rm rot }\it}
+%\def\grad{\vct{\rm grad }\it}
+%\def\div{\rm div \it}
+%\def\evn{espace vectoriel normé }
+%\def\evns{espaces vectoriels normés }
+%\def\interieur#1{\buildrel\circ\over{#1\,}}
+%\def\Interieur#1{\dst\overbrace{#1\,}^\circ}
+%\def\adher#1{\overline{#1\,}}
+%\def\vois{voisinages }
+%\def\voi{voisinage }
+%\def\evns{espaces vectoriels normés }
+%\def\V{{\cal V}}
+%\def\OE{{\cal O}_E}
+%\def\dimf{dimension finie}
+%\def\fn#1#2#3#4#5{\begin{array}[t]{cccl} #1\ : & #2&\longrightarrow&#3\\ &  #4&\longmapsto &#5\end{array}}
+%\def\.{$\bullet$\ \ }
+%\def\div{:\!\!\!\!\! -}
+%\def\gras#1{\bf #1 \rm}
+%\def\ps#1#2{\langle{#1}\, , \,{#2}\rangle}
+%
+%
+%\def\cond#1{\ \left\{\begin{tabular}{l} #1 \end{tabular}\right.}
+%\def\condd#1{\ \left.\begin{tabular}{l} #1 \end{tabular}\right\}}
+%
+
+
+%\newcommand{\croch}[1]{\left[ #1 \right]}
+
+\newcommand{\python}{\texttt{Python}}
+\newcommand{\p}[1]{\left(#1\right)}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{rouge_brique}{HTML}{B6321C}
+
+\newcommand{\cde}[1]{\colorbox{backcolour!80}{\texttt{#1}}}
+\newcommand{\code}[1]{\colorbox{backcolour!80}{\textcolor{rouge_brique}{\texttt{#1}}}}
+\newcommand{\pyv}[1]{\texttt{#1}}
+
+

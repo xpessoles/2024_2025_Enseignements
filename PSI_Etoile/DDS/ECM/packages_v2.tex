@@ -1,0 +1,26 @@
+%%----------------------------------------------------------------------------------------
+%%	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
+%%----------------------------------------------------------------------------------------
+\usepackage{pifont} 	% Pour les dinglist
+\usepackage{xargs}	% Pour arguments optionnels multiples, demandé par newcommandx de l'UPSTI
+\usepackage{siunitx}
+\sisetup{output-decimal-marker = {,}}
+
+% Schema-blocs Papanicola
+\usepackage{schemabloc}
+\usepackage{bodegraph}
+\usepackage{multirow}
+
+\usepackage{pdfpages}
+
+\usepackage{fancyqr}
+\fancyqrset{height=2.5cm}%,level=H,padding}
+
+%\newcommand{\titrechapitre}{}
+
+\usepackage{subcaption}
+\expandafter\def\csname ver@subfig.sty\endcsname{} %%% Empeche la collision avec un autre paquet... lequel ? (SVG ?)
+
+
+\usepackage{microtype,shapepar} % ECRIRE, par exemple un texte dans un coeur.
+

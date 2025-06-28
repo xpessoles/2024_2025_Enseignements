@@ -1,0 +1,1131 @@
+\usepackage{subfig}
+\usepackage{pgfplots}
+
+
+
+% kaobox
+\RequirePackage[most]{tcolorbox}
+
+\definecolor{bleuxp}{RGB}{0,84,127}
+\definecolor{bleuxpc}{RGB}{234,243,245}
+\definecolor{orangexp}{RGB}{253,173,87}
+\definecolor{orangexpc}{RGB}{254,230,204}
+\definecolor{violetxp}{RGB}{128,0,128}
+\definecolor{violetxpc}{RGB}{242,230,242}
+
+\definecolor{rougexp}{RGB}{238,104,93}
+\definecolor{rougexpc}{RGB}{247,184,179}
+
+
+
+
+
+\setlength{\columnseprule}{0pt}
+
+%%%%%%%%%%%
+% Compteurs
+\newcounter{cptApplication}[chapter]
+\newcounter{cptTD}[chapter]
+\newcounter{cptColle}[chapter]
+
+
+% Pieds de page en couleur
+\usepackage{eso-pic}
+\AddToShipoutPictureBG{\color{bleuxpc}%
+%\AtPageUpperLeft{\rule[-20mm]{\paperwidth}{20mm}}%
+\AtPageLowerLeft{\rule{\paperwidth}{16mm}}}
+
+
+\newtcolorbox{warn}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=RoyalBlue!25!White,
+	colbacktitle=RoyalBlue!25!White,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	#1
+}
+
+
+\newtcolorbox{exemple}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=RoyalBlue!25!White,
+	colbacktitle=RoyalBlue!25!White,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Exemple -- #1
+}
+
+
+
+% Exemples en marge
+\newtcolorbox{exemplem}[1][]{
+	boxrule=0pt,
+	colback=RoyalBlue!5!White,
+	coltext= darkgray,
+	sharp corners,enhanced,
+	borderline west={2pt}{0pt}{RoyalBlue!25!White},
+	left = 1pt,
+	right = 1pt,
+	top=1pt,
+	bottom=1pt,
+	colbacktitle=white,
+	title = \textcolor{RoyalBlue!25!White}{\textit{Exemple}},
+	%colframe=RoyalBlue,
+	%detach title,
+	%watermark text=\textit{\textsf{Exemple}}
+}
+
+\newtcolorbox{hypo}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=RoyalBlue!25!White,
+	colbacktitle=RoyalBlue!25!White,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Hypothèse #1
+}
+
+\newtcolorbox{solution}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=violetxpc,
+	colbacktitle=violetxpc,
+	coltitle=black,
+	colframe=violetxp,
+	fonttitle=\bfseries,
+	title = \'Eléments de correction #1
+}
+
+\newtcolorbox{corrige}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=violetxpc,
+	colbacktitle=violetxpc,
+	coltitle=black,
+	colframe=violetxp,
+	fonttitle=\bfseries,
+	title = Correction #1
+}
+
+\newtcolorbox{defi}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=bleuxp,
+	fonttitle=\bfseries,
+	title = Définition -- #1
+}
+
+
+
+\newtcolorbox{demo}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=bleuxp,
+	fonttitle=\bfseries,
+	title = Démonstration #1
+}
+
+\newtcolorbox{obj}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback = rougexpc!25!White,
+	colbacktitle = rougexpc!25!White,
+	coltitle=black,
+	colframe=rougexp,
+	fonttitle=\bfseries,
+	title = Objectif#1
+}
+
+\newtcolorbox{methode}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=bleuxp,
+	fonttitle=\bfseries,
+	title = Méthode -- #1
+}
+
+\newtcolorbox{resultat}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=bleuxp,
+	fonttitle=\bfseries,
+	title = Résultat -- #1
+}
+
+\newtcolorbox{theoreme}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=bleuxp,
+	fonttitle=\bfseries,
+	title = Théorème -- #1
+}
+
+\newtcolorbox{prop}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=RoyalBlue!25!White,
+	colbacktitle=RoyalBlue!25!White,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Propriété -- #1
+}
+
+
+\newtcolorbox{remarque}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Remarque#1
+}
+
+
+\newtcolorbox{rem}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Remarque#1
+}
+
+\newtcolorbox{remarques}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Remarques#1
+}
+
+\newtcolorbox{test}[1][]{
+	breakable,
+	before skip=1.5\topskip,
+	after skip=1.5\topskip,
+	left skip=0pt,
+	right skip=0pt,
+	left=4pt,
+	right=4pt,
+	top=2pt,
+	bottom=2pt,
+	lefttitle=4pt,
+	righttitle=4pt,
+	toptitle=2pt,
+	bottomtitle=2pt,
+	sharp corners,
+	boxrule=0pt,
+	titlerule=.4pt,
+	colback=bleuxpc,
+	colbacktitle=bleuxpc,
+	coltitle=black,
+	colframe=black,
+	fonttitle=\bfseries,
+	title = Test #1
+}
+
+%% Pour le python %%
+\usepackage{listingsutf8}
+
+\lstset{language=Python,
+  inputencoding=utf8/latin1,
+  breaklines=true,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  upquote = true,
+  columns=fullflexible,
+  backgroundcolor=\color{gray!10},frame=leftline,rulecolor=\color{gray}}  
+  
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\lstset{
+     literate=%
+         {é}{{\'e}}1    
+         {è}{{\`e}}1    
+         {ê}{{\^e}}1    
+         {à}{{\`a}}1
+		 {À}{{\`A}}1
+         {â}{{\^a}}1	 
+         {ô}{{\^o}}1    
+         {ù}{{\`u}}1    
+         {î}{{\^i}}1 
+         {ç}{{\c{c}}}1
+}
+
+%%
+
+
+
+
+
+
+
+%%%%%% Anthony
+\usepackage{pgf}
+
+% le dictionnaire
+\pgfkeys{
+  /stringcolor/.is family, /stringcolor,
+  /stringcolor/.unknown/.code = {\pgfkeyssetvalue{/stringcolor/#1}{#1}},
+  /stringcolor/GEO/.initial = black,
+  /stringcolor/CIN/.initial = red,
+  /stringcolor/STAT/.initial = green,
+  /stringcolor/CHS/.initial = blue,
+  /stringcolor/DYN/.initial = cyan,
+  /stringcolor/TEC/.initial = magenta,
+  /stringcolor/SLCI/.initial = brown,
+  /stringcolor/PERF/.initial = darkgray,
+  /stringcolor/COR/.initial = pink,
+  /stringcolor/NL/.initial = orange,
+  /stringcolor/SEQ/.initial = olive,
+  /stringcolor/NUM/.initial = purple,
+  /stringcolor/SYS/.initial = teal,
+  /stringcolor/CT/.initial = violet,
+  /stringcolor/RDM/.initial = lime,
+  /stringcolor/ELEC/.initial = gray,
+  /stringcolor/PPM/.initial = gray,
+  /stringcolor/A/.initial = red,
+  /stringcolor/B/.initial = green,
+  /stringcolor/C/.initial = blue,
+  /stringcolor/E/.initial = cyan,
+}
+
+% pour avoir la couleurw
+\newcommand{\colorForText}[1]{\pgfkeysvalueof{/stringcolor/#1}}
+% la boîte
+\newtcbox{\mybox}[1]{on line,
+arc=0pt,outer arc=0pt,
+colback=\colorForText{#1}!\pourCen!white,
+colframe=\colorForText{#1}!50!black,
+boxsep=0pt,left=1pt,right=1pt,top=2pt,bottom=2pt,
+boxrule=0pt,bottomrule=1pt,toprule=1pt}
+
+\newcommand{\xpComp}[2]{
+%\mybox{#1} {\textbf{#1 -- #2}}}
+\cpbox{#1}{#2} {\textbf{#1}}}
+
+%%%% Fonctionnement : \xpComp{TEC}{00}
+%%%%%% Anthony
+
+
+% Pour la géométrie geo clair, geo geo foncé
+%#1 : texte vertical
+% Pour le corps, pas d'argument
+\newtcbox{\cpbox}[2]{enhanced,nobeforeafter,tcbox raise base,boxrule=0.4pt,top=.8mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe= \colorForText{#1}!50!black,coltext=\colorForText{#1}!25!black,colback=\colorForText{#1}!10!white,
+  fontupper=\sffamily\bfseries,
+  overlay={\begin{tcbclipinterior}\fill[\colorForText{#1}!75!blue!50!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\footnotesize,rotate=90] {#2} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+
+\newcommand{\progress}[1]{
+    \begin{tikzpicture}
+        \fill[bleuxpc, rounded corners =1 mm] (0,0) rectangle (#1/100*2.5,.4);
+         \draw[bleuxp,thick, rounded corners =1 mm] (0,0) rectangle (2.5,.4);
+         \node at (1.25,0.2) {\textcolor{black}{#1~\%}};
+    \end{tikzpicture}
+}
+
+\newcommand{\CommaXp}{, }
+
+\pgfkeys{
+    /codecomp/.is family, /codecomp,
+    /codecomp/.unknown/.code = {\pgfkeyssetvalue{/codecomp/#1}{#1}},
+    /codecomp/GEO-00/.initial = Résoudre un problème de géométrie,
+    /codecomp/GEO-01/.initial = Analyser la géométrie d'un mécanisme\CommaXp analyser des surfaces de contact\CommaXp réaliser des constructions géométriques,
+    /codecomp/GEO-02/.initial = Modéliser un mécanisme en réalisant un schéma cinématique paramétré,
+    /codecomp/GEO-03/.initial = Résoudre un problème de géométrie : déterminer la trajectoire d'un point ou déterminer une loi Entrée - Sortie,
+    /codecomp/GEO-04/.initial = Évaluer expérimentalement une grandeur géométrique,
+    /codecomp/CIN-00/.initial = Résoudre un problème de cinématique,
+    /codecomp/CIN-01/.initial = Analyser un mécanisme\CommaXp réaliser un graphe de liaison,
+    /codecomp/CIN-02/.initial = Déterminer un vecteur vitesse\CommaXp un torseur cinématique\CommaXp un vecteur accélération,
+    /codecomp/CIN-03/.initial = Déterminer le rapport de transmission d'un transmetteur,
+    /codecomp/CIN-04/.initial = Déterminer un loi ES cinématique\CommaXp utiliser l'hypothèse de RSG,
+    /codecomp/CIN-05/.initial = Évaluer expérimentalement des grandeurs cinématiques,
+    /codecomp/STAT-00/.initial = Résoudre un problème de statique,
+    /codecomp/STAT-01/.initial = Analyser un problème en utilisant un graphe de structure,
+    /codecomp/STAT-02/.initial = Modéliser les actions mécaniques locales\CommaXp globales\CommaXp frottement,
+    /codecomp/STAT-03/.initial = Proposer une démarche de résolution en utilisant le PFS,
+    /codecomp/STAT-04/.initial = Mettre en œuvre une démarche de résolution,
+    /codecomp/STAT-05/.initial = Évaluer expérimentalement une action mécanique,
+    /codecomp/CHS-00/.initial = Modéliser un mécanisme,
+    /codecomp/CHS-01/.initial = Analyser un mécanisme en utilisant un graphe de liaisons,
+    /codecomp/CHS-02/.initial = Simplifier un mécanisme en utilisant une liaison équivalente,
+    /codecomp/CHS-03/.initial = Évaluer l'hyperstatisme d'un mécanisme,
+    /codecomp/CHS-04/.initial = Simplifier un mécanisme pour le rendre isostatique,
+    /codecomp/CHS-05/.initial = Analyser les conséquences de l'hyperstatisme d'un mécanisme,
+    /codecomp/DYN-00/.initial = Résoudre un problème de dynamique,
+    /codecomp/DYN-01/.initial = Analyser un problème\CommaXp définir une loi de mouvement,
+    /codecomp/DYN-02/.initial = Analyser un mécanisme en utilisant un graphe de structure,
+    /codecomp/DYN-03/.initial = Modéliser un solide et déterminer ses caractéristiques inertielles,
+    /codecomp/DYN-04/.initial = Déterminer un torseur cinétique\CommaXp un torseur dynamique,
+    /codecomp/DYN-05/.initial = Proposer une démarche de résolution en utilisant le PFD,
+    /codecomp/DYN-06/.initial = Mettre en œuvre une démarche de résolution en utilisant le PFD,
+    /codecomp/TEC-00/.initial = Résoudre un problème d'énergétique,
+    /codecomp/TEC-01/.initial = Analyser un mécanisme en utilisant un graphe de structure,
+    /codecomp/TEC-02/.initial = Déterminer les puissances intérieures,
+    /codecomp/TEC-03/.initial = Déterminer les puissances extérieures,
+    /codecomp/TEC-04/.initial = Déterminer l'inertie équivalente\CommaXp la masse équivalente\CommaXp l'énergie cinétique\CommaXp un travail,
+    /codecomp/TEC-05/.initial = Proposer et mettre en œuvre une démarche de résolution,
+    /codecomp/SLCI-00/.initial = Modéliser un SLCI,
+    /codecomp/SLCI-01/.initial = Analyser un asservissement\CommaXp proposer une structure d'asservissement,
+    /codecomp/SLCI-02/.initial = Modéliser un SLCI en utilisant la transformée de Laplace,
+    /codecomp/SLCI-03/.initial = Modéliser un SLCI en utilisant un schéma-bloc,
+    /codecomp/SLCI-04/.initial = Modéliser un SLCI en utilisant un modèle polyphysique,
+	/codecomp/SLCI-05/.initial = Modéliser un SLCI à plusieurs entrées\CommaXp sous forme matricielle éventuellement,
+    /codecomp/SLCI-06/.initial = Linéariser un comportement\CommaXp une équation\CommaXp simplifier un modèle,
+    /codecomp/SLCI-07/.initial = Modéliser un système d'ordre 1 et d'ordre 2,
+    /codecomp/SLCI-08/.initial = Déterminer une FTBO et une FTBF,
+    /codecomp/SLCI-09/.initial = Identifier des fonctions de transfert (à partir d'un schéma-bloc)\CommaXp mettre sous forme canonique et identifier des constantes,
+    /codecomp/SLCI-10/.initial = Déterminer et identifier une réponse temporelle,
+    /codecomp/SLCI-11/.initial = Déterminer et identifier et analyser une réponse fréquentielle,
+    /codecomp/PERF-00/.initial = Évaluer les performances d'un SLCI,
+    /codecomp/PERF-01/.initial = Évaluer la stabilité en utilisant la BF\CommaXp les pôles de la BF,
+    /codecomp/PERF-02/.initial = Évaluer la stabilité en utilisant les marges de la BO,
+    /codecomp/PERF-03/.initial = Évaluer la rapidité de la réponse temporelle,
+    /codecomp/PERF-04/.initial = Évaluer la rapidité à partir de la réponse fréquentielle de la BO,
+    /codecomp/PERF-05/.initial = Évaluer la précision à partir du TVF,
+    /codecomp/PERF-06/.initial = Évaluer la précision en utilisant la classe de la BO,
+    /codecomp/COR-00/.initial = Corriger un SLCI,
+    /codecomp/COR-01/.initial = Analyser un choix de correcteur (compensation de pôles\CommaXp nombre d'intégrations),
+    /codecomp/COR-02/.initial = Régler un correcteur P graphiquement ou analytiquement,
+    /codecomp/COR-03/.initial = Régler un correcteur PI graphiquement ou analytiquement,
+    /codecomp/COR-04/.initial = Régler un correcteur à avance de phase,
+    /codecomp/COR-05/.initial = Modéliser un correcteur numérique,
+    /codecomp/COR-06/.initial = Implanter un correcteur sur une cible,
+    /codecomp/NL-00/.initial = Modélisation des non linéarité d'un système,
+    /codecomp/NL-01/.initial = Identifier une non linéarité,
+    /codecomp/NL-02/.initial = Modéliser une non linéarité,
+    /codecomp/SEQ-00/.initial = Modéliser un système combinatoire ou séquentiel,
+    /codecomp/SEQ-01/.initial = Analyser un système séquentiel en utilisant un chronogramme\CommaXp analyser un système combinatoire en utilisant une table de vérité,
+    /codecomp/SEQ-02/.initial = Modélisation par équation booléenne,
+    /codecomp/SEQ-03/.initial = Modélisation par diagramme d'état,
+    /codecomp/NUM-00/.initial = Résoudre un problème numériquement,
+    /codecomp/NUM-01/.initial = Mettre un problème sous forme matricielle,
+    /codecomp/NUM-02/.initial = Résolution de f(x)=0,
+    /codecomp/NUM-03/.initial = Résolution d'une équation différentielle,
+    /codecomp/NUM-04/.initial = Résoudre un problème numériquement,
+    /codecomp/NUM-05/.initial = Résoudre un problème en utilisant l'apprentissage automatisé,
+    /codecomp/SYS-00/.initial = Analyser et valider les performances d'un système,
+    /codecomp/SYS-01/.initial = Réaliser une analyse structurelle\CommaXp flux\CommaXp effort,
+    /codecomp/SYS-02/.initial = Analyser une solution technologique,
+    /codecomp/SYS-03/.initial = Analyser un cahier des charges,
+    /codecomp/SYS-04/.initial = Valider les performances d'un système vis-à-vis d'un cahier des charges,
+    /codecomp/SYS-05/.initial = Analyser les résultats d'une simulation ou d'une expérimentation,
+    /codecomp/SYS-06/.initial = Mesurer et analyser une grandeur physique,
+	/codecomp/RDM-00/.initial = Dimensionner une pièce mécanique en résistance des matériaux,
+	/codecomp/RDM-01/.initial = Déterminer un torseur de cohésion, tracer les diagrammes des efforts,
+	/codecomp/RDM-02/.initial = Dimensionner une pièce en traction ou compression,
+	/codecomp/RDM-03/.initial = Dimensionner une pièce en torsion,
+	/codecomp/RDM-04/.initial = Dimensionner une pièce en flexion,
+	/codecomp/RDM-05/.initial = Déterminer les déformations d'une pièce,
+	/codecomp/ELEC-00/.initial = Dimensionner des moteurs électriques et de leur commande,
+	/codecomp/ELEC-01/.initial = Modélisation des circuits électriques en régime continu,
+	/codecomp/ELEC-02/.initial = Modélisation des circuits électriques en régime sinusoïdal,
+	/codecomp/ELEC-03/.initial = Dimensionnement des préactionneurs,
+	/codecomp/ELEC-04/.initial = Dimensionnement des moteurs à courant continu,
+	/codecomp/ELEC-05/.initial = Dimensionnement des moteurs alternatifs,
+	/codecomp/PPM-00/.initial = Concevoir et fabriquer des produits,
+	/codecomp/PPM-01/.initial = Concevoir et représenter des produits,
+	/codecomp/PPM-02/.initial = Analyser et concevoir une liaison encastrement,
+	/codecomp/PPM-03/.initial = Analyser et concevoir une lsaison pivot,
+	/codecomp/PPM-04/.initial = Analyser et concevoir une liaison glissière,
+	/codecomp/PPM-05/.initial = Choisir des matériaux,
+	/codecomp/PPM-06/.initial = Choisir des procédés d'obtention des produits,
+	/codecomp/PPM-07/.initial = Analyser les spécifications géométriques et dimensionnelles des produits,
+	/codecomp/A-03/.initial = Concevoir un algorithme utilisant une structure itérative (while),
+	/codecomp/A-04/.initial = Concevoir un algorithme utilisant une structure itérative (for),
+	/codecomp/A-06/.initial = Concevoir une fonction,
+	/codecomp/A-07/.initial = Manipuler des listes,
+	/codecomp/A-14/.initial = Utiliser des modules de bibliothèques,
+	/codecomp/B-01/.initial = Instruction et expression,
+	/codecomp/B-02/.initial = Effet de bord,
+	/codecomp/B-03/.initial = Spécifier une fonction,
+	/codecomp/B-04/.initial = Utiliser une assertion,
+	/codecomp/B-05/.initial = Expliciter et justifier des choix de conception,
+	/codecomp/B-06/.initial = Jeu de test associé à un programme,
+	/codecomp/C-01/.initial = Prouver la terminaison d'un algorithme,
+	/codecomp/C-02/.initial = Prouver la correction d'un algorithme,
+	/codecomp/C-03/.initial = Démontrer la complexité d'un algorithme,
+	/codecomp/C-04/.initial = Analyser l'évolution des variables d'un algorithme,
+	/codecomp/E-00/.initial = Bases des graphes,
+	/codecomp/E-01/.initial = Vocabulaire des graphes,
+	/codecomp/E-02/.initial = Notation des graphes,
+	/codecomp/E-03/.initial = Pondération des graphes,
+	/codecomp/E-04/.initial = Parcours d'un graphe,
+	/codecomp/E-05/.initial = Recherche d'un plus court chemin dans un graphe pondéré
+}
+
+\newcommand{\compForCodecomp}[2]{\xpComp{#1}{#2} \pgfkeysvalueof{/codecomp/#1-#2}}
+
+
+% Description des compétences sur deux
+\newcommand{\deuxcolxp}[2]{
+\begin{minipage}[c]{1cm} \xpComp{#1}{#2} \end{minipage} \hspace{.3cm} %
+\begin{minipage}[c]{8cm} \pgfkeysvalueof{/codecomp/#1-#2}\end{minipage} \\ \vspace{-0.2cm} \\}
+
+
+
+\newcommand{\allSysComp}{%
+\footnotesize
+\xpComp{SYS}{00} \hspace{.25cm} \textbf{\pgfkeysvalueof{/codecomp/SYS-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{SYS}{01}
+\indent \hspace{.5cm} \deuxcolxp{SYS}{02}
+\indent \hspace{.5cm} \deuxcolxp{SYS}{03}
+\indent \hspace{.5cm} \deuxcolxp{SYS}{04}
+\indent \hspace{.5cm} \deuxcolxp{SYS}{05}
+\indent \hspace{.5cm} \deuxcolxp{SYS}{06}
+\normalsize
+}
+
+\newcommand{\allGeoComp}{% 
+\footnotesize
+\xpComp{GEO}{00} \hspace{.25cm} \textbf{\pgfkeysvalueof{/codecomp/GEO-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{GEO}{01}
+\indent \hspace{.5cm} \deuxcolxp{GEO}{02}  
+\indent \hspace{.5cm} \deuxcolxp{GEO}{03}  
+\indent \hspace{.5cm} \deuxcolxp{GEO}{04} 
+\normalsize
+}
+
+\newcommand{\allCinComp}{%
+\footnotesize
+\xpComp{CIN}{00} \hspace{.25cm} \textbf{\pgfkeysvalueof{/codecomp/CIN-00}} \\ \vspace{-.1cm} \\
+
+
+\indent \hspace{.5cm} \deuxcolxp{CIN}{01}
+\indent \hspace{.5cm} \deuxcolxp{CIN}{02}
+\indent \hspace{.5cm} \deuxcolxp{CIN}{03}
+\indent \hspace{.5cm} \deuxcolxp{CIN}{04}
+\indent \hspace{.5cm} \deuxcolxp{CIN}{05}
+\normalsize
+}
+
+\newcommand{\allStatComp}{%
+\footnotesize
+\xpComp{STAT}{00} \hspace{.25cm} \textbf{\pgfkeysvalueof{/codecomp/STAT-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{STAT}{01}
+\indent \hspace{.5cm} \deuxcolxp{STAT}{02}
+\indent \hspace{.5cm} \deuxcolxp{STAT}{03}
+\indent \hspace{.5cm} \deuxcolxp{STAT}{04}
+\indent \hspace{.5cm} \deuxcolxp{STAT}{05}
+\normalsize
+}
+
+\newcommand{\allChsComp}{%
+\footnotesize
+\xpComp{CHS}{00} \textbf{\pgfkeysvalueof{/codecomp/CHS-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{CHS}{01}
+\indent \hspace{.5cm} \deuxcolxp{CHS}{02}
+\indent \hspace{.5cm} \deuxcolxp{CHS}{03}
+\indent \hspace{.5cm} \deuxcolxp{CHS}{04}
+\indent \hspace{.5cm} \deuxcolxp{CHS}{05}
+\normalsize
+}
+
+\newcommand{\allDynComp}{%
+\footnotesize
+\xpComp{DYN}{00} \textbf{\pgfkeysvalueof{/codecomp/DYN-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{DYN}{01}
+\indent \hspace{.5cm} \deuxcolxp{DYN}{02}
+\indent \hspace{.5cm} \deuxcolxp{DYN}{03}
+\indent \hspace{.5cm} \deuxcolxp{DYN}{04}
+\indent \hspace{.5cm} \deuxcolxp{DYN}{05}
+\indent \hspace{.5cm} \deuxcolxp{DYN}{06}
+\normalsize
+}
+
+\newcommand{\allTecComp}{%
+\footnotesize
+\xpComp{TEC}{00} \textbf{\pgfkeysvalueof{/codecomp/TEC-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{TEC}{01}
+\indent \hspace{.5cm} \deuxcolxp{TEC}{02}
+\indent \hspace{.5cm} \deuxcolxp{TEC}{03}
+\indent \hspace{.5cm} \deuxcolxp{TEC}{04}
+\indent \hspace{.5cm} \deuxcolxp{TEC}{05}
+\normalsize
+}
+
+\newcommand{\allSlciComp}{%
+\footnotesize
+\xpComp{SLCI}{00} \textbf{\pgfkeysvalueof{/codecomp/SLCI-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{01}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{02}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{03}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{04}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{05}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{06}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{07}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{08}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{09}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{10}
+\indent \hspace{.5cm} \deuxcolxp{SLCI}{11}
+\normalsize
+}
+
+\newcommand{\allPerfComp}{%
+\footnotesize
+\xpComp{PERF}{00} \textbf{\pgfkeysvalueof{/codecomp/PERF-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{PERF}{01}
+\indent \hspace{.5cm} \deuxcolxp{PERF}{02}
+\indent \hspace{.5cm} \deuxcolxp{PERF}{03}
+\indent \hspace{.5cm} \deuxcolxp{PERF}{04}
+\indent \hspace{.5cm} \deuxcolxp{PERF}{05}
+\indent \hspace{.5cm} \deuxcolxp{PERF}{06}
+\normalsize
+}
+
+\newcommand{\allCorComp}{%
+\footnotesize
+\xpComp{COR}{00} \textbf{\pgfkeysvalueof{/codecomp/COR-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{COR}{01}
+\indent \hspace{.5cm} \deuxcolxp{COR}{02}
+\indent \hspace{.5cm} \deuxcolxp{COR}{03}
+\indent \hspace{.5cm} \deuxcolxp{COR}{04}
+\indent \hspace{.5cm} \deuxcolxp{COR}{05}
+\indent \hspace{.5cm} \deuxcolxp{COR}{06}
+\normalsize
+}
+
+\newcommand{\allNlComp}{%
+\footnotesize
+\xpComp{NL}{00} \textbf{\pgfkeysvalueof{/codecomp/NL-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{NL}{01} 
+\indent \hspace{.5cm} \deuxcolxp{NL}{02} 
+\normalsize
+}
+
+\newcommand{\allSeqComp}{%
+\footnotesize
+\xpComp{SEQ}{00} \textbf{\pgfkeysvalueof{/codecomp/SEQ-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{SEQ}{01} 
+\indent \hspace{.5cm} \deuxcolxp{SEQ}{02} 
+\indent \hspace{.5cm} \deuxcolxp{SEQ}{03} 
+\normalsize
+}
+
+\newcommand{\allNumComp}{%
+\footnotesize
+\xpComp{NUM}{00} \textbf{\pgfkeysvalueof{/codecomp/NUM-00}} \\ \vspace{-.1cm} \\
+\indent \hspace{.5cm} \deuxcolxp{NUM}{01} 
+\indent \hspace{.5cm} \deuxcolxp{NUM}{02} 
+\indent \hspace{.5cm} \deuxcolxp{NUM}{03} 
+\indent \hspace{.5cm} \deuxcolxp{NUM}{04} 
+\indent \hspace{.5cm} \deuxcolxp{NUM}{05} 
+\normalsize
+}
+
+
+%\newcommand{\CommaXp}{, }
+% Description des compétences sur une colonne... non sur 2... Comprenne qui voudra...
+\newcommand{\uneColXp}[2]{
+\begin{minipage}[c]{1cm} \xpComp{#1}{#2} \end{minipage} \hspace{.4cm} %
+\begin{minipage}[c]{5.5cm} \pgfkeysvalueof{/codecomp/#1-#2}\end{minipage} \\ \vspace{.2cm} \\}
+
+
+\newcommand{\allCompWide}{%
+\textbf{\uneColXp{SYS}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{SYS}{01}
+\indent \hspace{.5cm} \uneColXp{SYS}{02}
+\indent \hspace{.5cm} \uneColXp{SYS}{03}
+\indent \hspace{.5cm} \uneColXp{SYS}{04}
+\indent \hspace{.5cm} \uneColXp{SYS}{05}
+\indent \hspace{.5cm} \uneColXp{SYS}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{GEO}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{GEO}{01}
+\indent \hspace{.5cm} \uneColXp{GEO}{02}  
+\indent \hspace{.5cm} \uneColXp{GEO}{03}  
+\indent \hspace{.5cm} \uneColXp{GEO}{04} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{CIN}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{CIN}{01}
+\indent \hspace{.5cm} \uneColXp{CIN}{02}
+\indent \hspace{.5cm} \uneColXp{CIN}{03}
+\indent \hspace{.5cm} \uneColXp{CIN}{04}
+\indent \hspace{.5cm} \uneColXp{CIN}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{STAT}{00}}
+\vspace{-.3cm}\indent \hspace{.5cm} \uneColXp{STAT}{01}
+\indent \hspace{.5cm} \uneColXp{STAT}{02}
+\indent \hspace{.5cm} \uneColXp{STAT}{03}
+\indent \hspace{.5cm} \uneColXp{STAT}{04}
+\indent \hspace{.5cm} \uneColXp{STAT}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{CHS}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{CHS}{01}
+\indent \hspace{.5cm} \uneColXp{CHS}{02}
+\indent \hspace{.5cm} \uneColXp{CHS}{03}
+\indent \hspace{.5cm} \uneColXp{CHS}{04}
+\indent \hspace{.5cm} \uneColXp{CHS}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{DYN}{00}}
+\vspace{-.4cm}
+\indent \hspace{.5cm} \uneColXp{DYN}{01}
+\indent \hspace{.5cm} \uneColXp{DYN}{02}
+\indent \hspace{.5cm} \uneColXp{DYN}{03}
+\indent \hspace{.5cm} \uneColXp{DYN}{04}
+\indent \hspace{.5cm} \uneColXp{DYN}{05}
+\indent \hspace{.5cm} \uneColXp{DYN}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{TEC}{00}}
+\vspace{-.4cm}
+\indent \hspace{.5cm} \uneColXp{TEC}{01}
+\indent \hspace{.5cm} \uneColXp{TEC}{02}
+\indent \hspace{.5cm} \uneColXp{TEC}{03}
+\indent \hspace{.5cm} \uneColXp{TEC}{04}
+\indent \hspace{.5cm} \uneColXp{TEC}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{SLCI}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{SLCI}{01}
+\indent \hspace{.5cm} \uneColXp{SLCI}{02}
+\indent \hspace{.5cm} \uneColXp{SLCI}{03}
+\indent \hspace{.5cm} \uneColXp{SLCI}{04}
+\indent \hspace{.5cm} \uneColXp{SLCI}{05}
+\indent \hspace{.5cm} \uneColXp{SLCI}{06}
+\indent \hspace{.5cm} \uneColXp{SLCI}{07}
+\indent \hspace{.5cm} \uneColXp{SLCI}{08}
+\indent \hspace{.5cm} \uneColXp{SLCI}{09}
+\indent \hspace{.5cm} \uneColXp{SLCI}{10}
+\indent \hspace{.5cm} \uneColXp{SLCI}{11}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{PERF}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{PERF}{01}
+\indent \hspace{.5cm} \uneColXp{PERF}{02}
+\indent \hspace{.5cm} \uneColXp{PERF}{03}
+\indent \hspace{.5cm} \uneColXp{PERF}{04}
+\indent \hspace{.5cm} \uneColXp{PERF}{05}
+\indent \hspace{.5cm} \uneColXp{PERF}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{COR}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{COR}{01}
+\indent \hspace{.5cm} \uneColXp{COR}{02}
+\indent \hspace{.5cm} \uneColXp{COR}{03}
+\indent \hspace{.5cm} \uneColXp{COR}{04}
+\indent \hspace{.5cm} \uneColXp{COR}{05}
+\indent \hspace{.5cm} \uneColXp{COR}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{NL}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{NL}{01} 
+\indent \hspace{.5cm} \uneColXp{NL}{02} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{SEQ}{00}}
+\vspace{-.2cm}
+\indent \hspace{.5cm} \uneColXp{SEQ}{01} 
+\indent \hspace{.5cm} \uneColXp{SEQ}{02} 
+\indent \hspace{.5cm} \uneColXp{SEQ}{03} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{NUM}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{NUM}{01} 
+\indent \hspace{.5cm} \uneColXp{NUM}{02} 
+\indent \hspace{.5cm} \uneColXp{NUM}{03} 
+\indent \hspace{.5cm} \uneColXp{NUM}{04} 
+\indent \hspace{.5cm} \uneColXp{NUM}{05} 
+}
+
+\newcommand{\allCompWideMP}{%
+\textbf{\uneColXp{SYS}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{SYS}{01}
+\indent \hspace{.5cm} \uneColXp{SYS}{02}
+\indent \hspace{.5cm} \uneColXp{SYS}{03}
+\indent \hspace{.5cm} \uneColXp{SYS}{04}
+\indent \hspace{.5cm} \uneColXp{SYS}{05}
+\indent \hspace{.5cm} \uneColXp{SYS}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{GEO}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{GEO}{01}
+\indent \hspace{.5cm} \uneColXp{GEO}{02}  
+\indent \hspace{.5cm} \uneColXp{GEO}{03}  
+%\indent \hspace{.5cm} \uneColXp{GEO}{04} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{CIN}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{CIN}{01}
+\indent \hspace{.5cm} \uneColXp{CIN}{02}
+\indent \hspace{.5cm} \uneColXp{CIN}{03}
+\indent \hspace{.5cm} \uneColXp{CIN}{04}
+%\indent \hspace{.5cm} \uneColXp{CIN}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{STAT}{00}}
+\vspace{-.3cm}\indent \hspace{.5cm} \uneColXp{STAT}{01}
+\indent \hspace{.5cm} \uneColXp{STAT}{02}
+\indent \hspace{.5cm} \uneColXp{STAT}{03}
+\indent \hspace{.5cm} \uneColXp{STAT}{04}
+\indent \hspace{.5cm} \uneColXp{STAT}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{CHS}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{CHS}{01}
+\indent \hspace{.5cm} \uneColXp{CHS}{02}
+%\indent \hspace{.5cm} \uneColXp{CHS}{03}
+%\indent \hspace{.5cm} \uneColXp{CHS}{04}
+%\indent \hspace{.5cm} \uneColXp{CHS}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{DYN}{00}}
+\vspace{-.4cm}
+\indent \hspace{.5cm} \uneColXp{DYN}{01}
+\indent \hspace{.5cm} \uneColXp{DYN}{02}
+\indent \hspace{.5cm} \uneColXp{DYN}{03}
+\indent \hspace{.5cm} \uneColXp{DYN}{04}
+\indent \hspace{.5cm} \uneColXp{DYN}{05}
+\indent \hspace{.5cm} \uneColXp{DYN}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{TEC}{00}}
+\vspace{-.4cm}
+\indent \hspace{.5cm} \uneColXp{TEC}{01}
+\indent \hspace{.5cm} \uneColXp{TEC}{02}
+\indent \hspace{.5cm} \uneColXp{TEC}{03}
+\indent \hspace{.5cm} \uneColXp{TEC}{04}
+\indent \hspace{.5cm} \uneColXp{TEC}{05}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{SLCI}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{SLCI}{01}
+\indent \hspace{.5cm} \uneColXp{SLCI}{02}
+\indent \hspace{.5cm} \uneColXp{SLCI}{03}
+\indent \hspace{.5cm} \uneColXp{SLCI}{04}
+\indent \hspace{.5cm} \uneColXp{SLCI}{05}
+\indent \hspace{.5cm} \uneColXp{SLCI}{06}
+\indent \hspace{.5cm} \uneColXp{SLCI}{07}
+\indent \hspace{.5cm} \uneColXp{SLCI}{08}
+\indent \hspace{.5cm} \uneColXp{SLCI}{09}
+\indent \hspace{.5cm} \uneColXp{SLCI}{10}
+\indent \hspace{.5cm} \uneColXp{SLCI}{11}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{PERF}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{PERF}{01}
+\indent \hspace{.5cm} \uneColXp{PERF}{02}
+\indent \hspace{.5cm} \uneColXp{PERF}{03}
+\indent \hspace{.5cm} \uneColXp{PERF}{04}
+\indent \hspace{.5cm} \uneColXp{PERF}{05}
+\indent \hspace{.5cm} \uneColXp{PERF}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{COR}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{COR}{01}
+\indent \hspace{.5cm} \uneColXp{COR}{02}
+\indent \hspace{.5cm} \uneColXp{COR}{03}
+\indent \hspace{.5cm} \uneColXp{COR}{04}
+\indent \hspace{.5cm} \uneColXp{COR}{05}
+%\indent \hspace{.5cm} \uneColXp{COR}{06}
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{NL}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{NL}{01} 
+\indent \hspace{.5cm} \uneColXp{NL}{02} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{SEQ}{00}}
+\vspace{-.2cm}
+\indent \hspace{.5cm} \uneColXp{SEQ}{01} 
+\indent \hspace{.5cm} \uneColXp{SEQ}{02} 
+\indent \hspace{.5cm} \uneColXp{SEQ}{03} 
+
+\vspace{-.4cm}
+
+\textbf{\uneColXp{NUM}{00}}
+\vspace{-.3cm}
+\indent \hspace{.5cm} \uneColXp{NUM}{01} 
+\indent \hspace{.5cm} \uneColXp{NUM}{02} 
+\indent \hspace{.5cm} \uneColXp{NUM}{03} 
+\indent \hspace{.5cm} \uneColXp{NUM}{04} 
+\indent \hspace{.5cm} \uneColXp{NUM}{05} 
+}

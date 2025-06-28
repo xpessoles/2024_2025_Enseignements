@@ -1,0 +1,115 @@
+% Load the kaobook class
+\documentclass[
+	fontsize=10pt, % Base font size
+	twoside=true, % Use different layouts for even and odd pages (in particular, if twoside=true, the margin column will be always on the outside)
+	%open=any, % If twoside=true, uncomment this to force new chapters to start on any page, not only on right (odd) pages
+%%	secnumdepth=1, % How deep to number headings. Defaults to 1 (sections)
+]{kaobook}
+
+\newcommand{\discipline}{Sciences Industrielles de l'Ingénieur -- PSI$\star$}
+\newcommand{\auteur}{Xavier Pessoles}
+\newcommand{\repRel}{}
+\newcommand{\repAct}{\repRel/PSI_ExercicesCompetences/}
+
+%\input{\repRel/Style/packages_v2}
+\input{packages_v2}
+\newcommand{\repStyle}{\repRel/Style}
+\input{macros_SII_v2}
+%\input{\repRel/Style/environment_v2}
+\input{environment_v2}
+%\usepackage{\repStyle/UPSTI_pedagogique}
+
+
+% Choose the language
+\frenchsetup{StandardItemLabels=true}
+
+
+
+% Load the bibliography package
+\usepackage{kaobiblio}
+%\addbibresource{Cy_01_ModelisationSystemes.bib} % Bibliography file
+
+% Load mathematical packages for theorems and related environments
+\usepackage{kaotheorems}
+
+% Load the package for hyperreferences
+\usepackage{kaorefs}
+
+\graphicspath{{images/}{./}} % Paths where images are looked for
+
+\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+
+
+
+\begin{document}
+
+%%----------------------------------------------------------------------------------------
+%%	BOOK INFORMATION
+%%----------------------------------------------------------------------------------------
+%
+%%\titlehead{Document Template}
+%\title[SII en PSI*]{SII en PSI* -- Exercices d'application}
+%\author[XP]{Xavier Pessoles}
+%\date{\today}
+%%\publishers{An Awesome Publisher}
+%
+%%----------------------------------------------------------------------------------------
+%%
+%\frontmatter % Denotes the start of the pre-document content, uses roman numerals
+%\maketitle
+%
+%\begingroup % Local scope for the following commands
+%\tableofcontents
+%\endgroup
+
+%%----------------------------------------------------------------------------------------
+%%	MAIN BODY
+%%----------------------------------------------------------------------------------------
+%
+\mainmatter % Denotes the start of the main document content, resets page numbering and uses arabic 
+
+\setchapterstyle{kao}
+
+\setcounter{margintocdepth}{\sectiontocdepth}
+\marginlayout
+\graphicspath{{\repStyle/png}}
+
+\pagestyle{xp.scrheadings}
+
+
+%%%%%
+\newcommand{\repExo}{Application_01_ROV}
+\newcommand{\nomExo}{Application_01_ROV}
+%\newcounter{cptApplication}[chapter]
+%\newcounter{cptTD}[chapter]
+\AtBeginEnvironment{corrige}{\small}
+
+\livrettrue % Livrettrue :  eleve sans les corrections
+\collefalse
+\normaltrue
+%%%%%
+\setcounter{cptApplication}{1}
+\setcounter{cptTD}{1}
+\newcommand{\exer}{\subsection*}
+\newcommand{\td}{}
+
+
+\newcounter{decsec}
+\setcounter{decsec}{159} % 
+
+% Macro pour les sections décroissantes
+\renewcommand{\exer}[1]{
+    \stepcounter{decsec}
+    \addtocounter{decsec}{-2} % Décrémente le compteur de 1
+    \section*{Exercice \arabic{decsec} -- #1}
+    \addtocounter{subparagraph}{-1} % Empêche l'incrémentation du compteur de section normal
+}
+
+\chapter*{Les Petits Devoirs du Soir -- DDS}
+
+RIEN POUR LE MOMENT
+\allCompWideMP
+%\proftrue
+%\setcounter{chapter}{0}
+%\input{all_tex}
+\end{document}
